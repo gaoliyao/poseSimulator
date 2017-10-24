@@ -5,6 +5,7 @@ from Pose import Pose
 class Person:
     poseSequence = []
     nextPosePrediction = Pose()
+
     def addPose(self, pose):
         self.poseSequence.append(pose)
         if len(self.poseSequence) == 1:

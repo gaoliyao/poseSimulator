@@ -22,3 +22,17 @@ class Pose:
             p.undraw()
     def getPoseNodes(self):
         return self.poseNodes
+    def normalize(self):
+        minX = 100000
+        minY = 100000
+        for node in self.poseNodes:
+            if node.getX() < minX:
+                minX = node.getX()
+            if node.getY() < minY:
+                minY = node.getY()
+        for node in self.poseNodes:
+            newNode = node
+            newNode.normalize(minX, minY)
+            self.normalizedPoseNodes.append(newNode)
+    def getNormalizedPoseNodes(self):
+        return self.normalizedPoseNodes
