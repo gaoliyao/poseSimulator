@@ -8,7 +8,7 @@ class Comparator:
         predictPoseNodes = person.getNextPosePrediction().getPoseNodes()
         for i in range(len(pose.getPoseNodes())):
             result += self.dist(poseNodes[i], predictPoseNodes[i])
-        if result <= 0.001:
+        if result <= 1000:
             return True
         else:
             return False

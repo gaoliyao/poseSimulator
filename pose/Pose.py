@@ -13,6 +13,8 @@ class Pose:
         self.poseNodes.append(node)
     def getAveConfidence(self):
         count = len(self.poseNodes)
+        if count == 0:
+            return 0
         sum = 0
         for p in self.poseNodes:
             sum += p.getConfidence()
