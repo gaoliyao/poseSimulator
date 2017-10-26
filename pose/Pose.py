@@ -4,6 +4,11 @@ class Pose:
     normalizedPoseNodes = []
     showPoints = []
     AveConfidence = 0.0
+    def __init__(self):
+        self.poseNodes = []
+        self.normalizedPoseNodes = []
+        self.showPoints
+        self.AveConfidence = 0.0
     def addNode(self, node):
         self.poseNodes.append(node)
     def getAveConfidence(self):
