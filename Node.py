@@ -30,8 +30,8 @@ class Node:
     def getConfidence(self):
         return self.confidence
     def getX(self):
-        return self.x
+        return round(self.x, 6)
     def getY(self):
-        return self.y
+        return round(self.y, 6)
     def getID(self):
         return self.id
