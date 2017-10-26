@@ -1,6 +1,7 @@
 from pose.Comparator import Comparator
 from pose.Node import Node
 from pose.Person import Person
+
 from pose.Pose import Pose
 
 file = open("data.txt", 'r')

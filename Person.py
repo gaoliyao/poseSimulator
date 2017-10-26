@@ -4,7 +4,7 @@ from Pose import Pose
 
 class Person:
     poseSequence = []
-    nextPosePrediction = []
+    nextPosePrediction = None
 
     def __init__(self):
         self.poseSequence = []
@@ -34,8 +34,7 @@ class Person:
         return self.nextPosePrediction
     def outputPerson(self, file):
         for pose in self.poseSequence:
-            nodes = pose.getPoseNodes()
-            for node in nodes:
+            for node in pose.getPoseNodes():
                 file.write(str(node.getX()) + " ")
                 file.write(str(node.getY()) + " ")
                 file.write(str(node.getConfidence()) + " ")
