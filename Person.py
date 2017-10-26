@@ -16,12 +16,12 @@ class Person:
     def __init__(self):
         self.poseSequence = []
         self.nextPosePrediction = []
-        currX = 0
-        currY = 0
-        speed = 0
-        direction = 0
-        poseIndex = 0
-        walkingTrace = []
+        self.currX = 0
+        self.currY = 0
+        self.speed = 0
+        self.direction = 0
+        self.poseIndex = 0
+        self.walkingTrace = []
     def addPoseSequence(self, poseSequence):
         self.poseSequence = poseSequence
     def addPose(self, pose):
@@ -55,8 +55,8 @@ class Person:
     def getPoseSequence(self):
         return self.poseSequence
     def walk(self, speed, direction):
-        dx = speed * math.cos(direction)
-        dy = speed * math.sin(direction)
+        dx = speed * math.sin(math.radians(direction))
+        dy = speed * math.cos(math.radians(direction))
         self.currX += dx
         self.currY += dy
         newPose = Pose()
@@ -65,5 +65,6 @@ class Person:
             newPose.addNode(newNode)
         self.walkingTrace.append(newPose)
         self.poseIndex += 1
+        return newPose
     def getCurrentWalkingPose(self):
         return self.walkingTrace[self.poseIndex - 1]

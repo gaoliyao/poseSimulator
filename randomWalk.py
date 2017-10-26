@@ -43,10 +43,10 @@ start_position = (0,0)
 box_width_height = (10,10)
 moving_speed = 10
 gap = 1
-
 person1 = loadPersonOne()
 person2 = loadPersonOne()
 person3 = loadPersonOne()
+
 # Write the first data
 for i in range(1, 11):
     # person 1
