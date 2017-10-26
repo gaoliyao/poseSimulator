@@ -15,7 +15,7 @@ def loadPersonOne():
     poseSequence.append(Pose())
     for line in file:
         if "#" in line:
-            poseSequence[index].normalize()
+            poseSequence[index].Normalize(10)
             poseSequence.append(Pose())
             count = 0
             index += 1
@@ -36,6 +36,8 @@ def loadPersonOne():
     file.close()
     return person
 
+
+
 out = open("out.txt","w")
 start_position = (0,0)
 box_width_height = (10,10)
@@ -54,7 +56,7 @@ for i in range(1,11):
     currPose = person.getPoseSequence()[i % len(person.getPoseSequence())]
     outputStr = "0 " + "frame" + str(i) + " "
     for node in currPose.getPoseNodes():
-        node.normalize(-tmp_x, -tmp_y)
+        node.normalize(-tmp_x, -tmp_y, 5)
         outputStr += str(node.getX()) + " " + str(node.getY()) + " " + str(node.getConfidence()) + " "
     out.write(outputStr + "\n")
     loop_p = (tmp_x,tmp_y)
@@ -67,9 +69,9 @@ for i in range(1,11):
     tmp_y += moving_speed + gap
     person = loadPersonOne()
     currPose = person.getPoseSequence()[i % len(person.getPoseSequence())]
-    outputStr = "0 " + "frame" + str(i) + " "
+    outputStr = "1 " + "frame" + str(i) + " "
     for node in currPose.getPoseNodes():
-        node.normalize(-tmp_x, -tmp_y)
+        node.normalize(-tmp_x, -tmp_y, 5)
         outputStr += str(node.getX()) + " " + str(node.getY()) + " " + str(node.getConfidence()) + " "
     out.write(outputStr + "\n")
     loop_p = (tmp_x, tmp_y)
@@ -84,9 +86,9 @@ for i in range(1,11):
     tmp_y += moving_speed + gap
     person = loadPersonOne()
     currPose = person.getPoseSequence()[i % len(person.getPoseSequence())]
-    outputStr = "0 " + "frame" + str(i) + " "
+    outputStr = "2 " + "frame" + str(i) + " "
     for node in currPose.getPoseNodes():
-        node.normalize(-tmp_x, -tmp_y)
+        node.normalize(-tmp_x, -tmp_y, 5)
         outputStr += str(node.getX()) + " " + str(node.getY()) + " " + str(node.getConfidence()) + " "
     out.write(outputStr + "\n")
     loop_p = (tmp_x, tmp_y)

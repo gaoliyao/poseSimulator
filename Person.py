@@ -1,14 +1,27 @@
 from Node import Node
 from Pose import Pose
+import math
 
 
 class Person:
     poseSequence = []
+    walkingTrace = []
     nextPosePrediction = None
+    currX = 0
+    currY = 0
+    speed = 0
+    direction = 0
+    poseIndex = 0
 
     def __init__(self):
         self.poseSequence = []
         self.nextPosePrediction = []
+        currX = 0
+        currY = 0
+        speed = 0
+        direction = 0
+        poseIndex = 0
+        walkingTrace = []
     def addPoseSequence(self, poseSequence):
         self.poseSequence = poseSequence
     def addPose(self, pose):
@@ -41,3 +54,16 @@ class Person:
             file.write("\n")
     def getPoseSequence(self):
         return self.poseSequence
+    def walk(self, speed, direction):
+        dx = speed * math.cos(direction)
+        dy = speed * math.sin(direction)
+        self.currX += dx
+        self.currY += dy
+        newPose = Pose()
+        for node in self.poseSequence[self.poseIndex % len(self.poseSequence)].getNormalizedPoseNodes():
+            newNode = Node(node.getID(), self.currX + node.getX(), self.currY + node.getY(), node.getConfidence())
+            newPose.addNode(newNode)
+        self.walkingTrace.append(newPose)
+        self.poseIndex += 1
+    def getCurrentWalkingPose(self):
+        return self.walkingTrace[self.poseIndex - 1]

@@ -19,7 +19,12 @@ class Node:
         self.id = id
         print(id)
         self.name = self.nameList[id]
-    def normalize(self, lengthX, lengthY):
+    def rawNormalize(self, lengthX, lengthY):
+        self.x -= lengthX
+        self.y -= lengthY
+    def normalize(self, lengthX, lengthY, scale):
+        self.x /= scale
+        self.y /= scale
         self.x -= lengthX
         self.y -= lengthY
     def getConfidence(self):
@@ -28,3 +33,5 @@ class Node:
         return self.x
     def getY(self):
         return self.y
+    def getID(self):
+        return self.id
