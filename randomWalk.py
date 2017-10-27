@@ -54,7 +54,9 @@ person3 = loadPersonOne()
 for i in range(1, 101):
     # person 1
     speedOne = randint(10, 20)
-    directionOne = randint(-1, 361)
+    directionOne = 0
+    if i % 10 == 0:
+        directionOne = randint(-1, 361)
     person1.walk(speedOne, directionOne)
     currPoseOne = person1.getCurrentWalkingPose()
     minX, minY, maxX, maxY = currPoseOne.getBound()
@@ -64,7 +66,9 @@ for i in range(1, 101):
 
     # person 2
     speedTwo = randint(10, 20)
-    directionTwo = randint(-1, 361)
+    directionTwo = 45
+    if i % 10 == 0:
+        directionTwo = randint(-1, 361)
     person2.walk(speedTwo, directionTwo)
     currPoseTwo = person2.getCurrentWalkingPose()
     minX, minY, maxX, maxY = currPoseTwo.getBound()
@@ -74,7 +78,9 @@ for i in range(1, 101):
 
     # person 3
     speedThree = randint(10, 20)
-    directionThree = randint(-1, 361)
+    directionThree = 90
+    if i % 10 == 0:
+        directionThree = randint(-1, 361)
     person3.walk(speedThree, directionThree)
     currPoseThree = person3.getCurrentWalkingPose()
     minX, minY, maxX, maxY = currPoseThree.getBound()
