@@ -26,12 +26,12 @@ for line in file:
         pose = Pose()
         count = 0
         for j in range(i, i + 54, 3):
-            if j + 2 > len(numbers):
+            if j + 2 > len(numbers)-1:
                 break
             print(count, numbers[j], numbers[j+1], numbers[j+2])
             pose.addNode(Node(count, float(numbers[j]), float(numbers[j+1]), float(numbers[j+2])))
             count += 1
-        if pose.getAveConfidence() >= 0.5:
+        if pose.getAveConfidence() >= 0.4:
             if existPerson(pose) != False:
                 existPerson(pose).addPose(pose)
             else:
