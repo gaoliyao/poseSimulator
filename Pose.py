@@ -4,6 +4,10 @@ class Pose:
     normalizedPoseNodes = []
     showPoints = []
     AveConfidence = 0.0
+    minX = 100000
+    maxX = -1
+    minY = 100000
+    maxY = -1
     def __init__(self):
         self.poseNodes = []
         self.normalizedPoseNodes = []
@@ -30,34 +34,40 @@ class Pose:
     def getPoseNodes(self):
         return self.poseNodes
     def rawNormalize(self):
-        minX = 100000
-        minY = 100000
         for node in self.poseNodes:
-            if node.getX() < minX:
-                minX = node.getX()
-            if node.getY() < minY:
-                minY = node.getY()
+            if node.getX() < self.minX:
+                self.minX = node.getX()
+            if node.getY() < self.minY:
+                self.minY = node.getY()
         for node in self.poseNodes:
             newNode = node
-            newNode.normalize(minX, minY, 1)
+            newNode.normalize(self.minX, self.minY, 1)
             self.normalizedPoseNodes.append(newNode)
     def normalize(self, height):
-        minX = 100000
-        maxX = -1
-        minY = 100000
-        maxY = -1
+
         for node in self.poseNodes:
-            if node.getX() > maxX:
-                maxX = node.getX()
-            if node.getX() < minX:
-                minX = node.getX()
-            if node.getY() > maxY:
-                maxY = node.getY()
-            if node.getY() < minY:
-                minY = node.getY()
+            if node.getX() > self.maxX:
+                self.maxX = node.getX()
+            if node.getX() < self.minX:
+                self.minX = node.getX()
+            if node.getY() > self.maxY:
+                self.maxY = node.getY()
+            if node.getY() < self.minY:
+                self.minY = node.getY()
         for node in self.poseNodes:
             newNode = node
-            newNode.normalize(minX, minY, (maxY-minY) / height)
+            newNode.normalize(self.minX, self.minY, (self.maxY-self.minY) / height)
             self.normalizedPoseNodes.append(newNode)
     def getNormalizedPoseNodes(self):
         return self.normalizedPoseNodes
+    def getBound(self):
+        for node in self.poseNodes:
+            if node.getX() > self.maxX:
+                self.maxX = node.getX()
+            if node.getX() < self.minX:
+                self.minX = node.getX()
+            if node.getY() > self.maxY:
+                self.maxY = node.getY()
+            if node.getY() < self.minY:
+                self.minY = node.getY()
+        return self.minX, self.minY, self.maxX, self.maxY

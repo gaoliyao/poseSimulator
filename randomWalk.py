@@ -4,6 +4,8 @@ from Node import Node
 from Person import Person
 from Pose import Pose
 
+cameraHeight = 100
+cameraDistance = 100
 
 def loadPersonOne():
     file = open("person1Frame.txt", 'r')
@@ -38,7 +40,8 @@ def loadPersonOne():
 
 
 
-out = open("out2.txt","w")
+inputData = open("out2.txt","w")
+outputData = open("out3.txt","w")
 start_position = (0,0)
 box_width_height = (10,10)
 moving_speed = 10
@@ -48,26 +51,39 @@ person2 = loadPersonOne()
 person3 = loadPersonOne()
 
 # Write the first data
-for i in range(1, 11):
+for i in range(1, 101):
     # person 1
     speedOne = randint(10, 20)
-    person1.walk(speedOne, 90)
+    directionOne = randint(-1, 361)
+    person1.walk(speedOne, directionOne)
     currPoseOne = person1.getCurrentWalkingPose()
+    minX, minY, maxX, maxY = currPoseOne.getBound()
+    outputData.write(str(minX) + " " + str(minY) + " " + str(maxX) + " " + str(maxY) + " ")
     for node in currPoseOne.getPoseNodes():
-        out.write(str(node.getX()) + " " + str(node.getY()) + " " + str(node.getConfidence()) + " ")
+        inputData.write(str(node.getX()) + " " + str(node.getY()) + " ")
+
     # person 2
     speedTwo = randint(10, 20)
-    person2.walk(speedTwo, 45)
+    directionTwo = randint(-1, 361)
+    person2.walk(speedTwo, directionTwo)
     currPoseTwo = person2.getCurrentWalkingPose()
+    minX, minY, maxX, maxY = currPoseTwo.getBound()
+    outputData.write(str(minX) + " " + str(minY) + " " + str(maxX) + " " + str(maxY) + " ")
     for node in currPoseTwo.getPoseNodes():
-        out.write(str(node.getX()) + " " + str(node.getY()) + " " + str(node.getConfidence()) + " ")
+        inputData.write(str(node.getX()) + " " + str(node.getY()) + " ")
+
     # person 3
     speedThree = randint(10, 20)
-    person3.walk(speedThree, 0)
+    directionThree = randint(-1, 361)
+    person3.walk(speedThree, directionThree)
     currPoseThree = person3.getCurrentWalkingPose()
+    minX, minY, maxX, maxY = currPoseThree.getBound()
+    outputData.write(str(minX) + " " + str(minY) + " " + str(maxX) + " " + str(maxY) + " ")
     for node in currPoseThree.getPoseNodes():
-        out.write(str(node.getX()) + " " + str(node.getY()) + " " + str(node.getConfidence()) + " ")
-    out.write("\n")
+        inputData.write(str(node.getX()) + " " + str(node.getY()) + " ")
+
+    inputData.write("\n")
+    outputData.write("\n")
 # Generate horizontal moving box
 # loop_p = start_position
 # for i in range(1,11):
@@ -115,4 +131,5 @@ for i in range(1, 11):
 #     out.write(outputStr + "\n")
 #     loop_p = (tmp_x, tmp_y)
 
-out.close()
+inputData.close()
+outputData.close()

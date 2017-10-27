@@ -12,6 +12,7 @@ class Person:
     speed = 0
     direction = 0
     poseIndex = 0
+    originalAngle = 0
 
     def __init__(self):
         self.poseSequence = []
@@ -55,16 +56,20 @@ class Person:
     def getPoseSequence(self):
         return self.poseSequence
     def walk(self, speed, direction):
-        dx = speed * math.sin(math.radians(direction))
-        dy = speed * math.cos(math.radians(direction))
+        dx = speed * math.cos(math.radians(direction))
+        dy = speed * math.sin(math.radians(direction))
         self.currX += dx
         self.currY += dy
         newPose = Pose()
+        minX, minY, maxX, maxY = newPose.getBound()
+        xMean = maxX / 2
         for node in self.poseSequence[self.poseIndex % len(self.poseSequence)].getNormalizedPoseNodes():
-            newNode = Node(node.getID(), self.currX + node.getX(), self.currY + node.getY(), node.getConfidence())
+            newNode = Node(node.getID(), self.currX + (node.getX() - xMean) * math.cos(math.radians(direction + 90)), self.currY + node.getY() + 0.25 * (node.getX() - xMean) * math.sin(math.radians(direction + 90)), node.getConfidence())
             newPose.addNode(newNode)
         self.walkingTrace.append(newPose)
         self.poseIndex += 1
         return newPose
     def getCurrentWalkingPose(self):
         return self.walkingTrace[self.poseIndex - 1]
+    def setOriginalAngle(self, angle):
+        self.originalAngle = angle
