@@ -14,6 +14,7 @@ def loadPersonOne():
     poseSequence = []
     count = 0
     index = 0
+    person.setOriginalAngle(270)
     poseSequence.append(Pose())
     for line in file:
         if "#" in line:
@@ -38,7 +39,31 @@ def loadPersonOne():
     file.close()
     return person
 
-
+def loadPersonTwo():
+    file = open("person2Frame.txt", 'r')
+    # currWin = None
+    person = Person()
+    person.setOriginalAngle(120)
+    poseSequence = []
+    count = 0
+    index = 0
+    poseSequence.append(Pose())
+    for line in file:
+        line = line.replace("\n", "")
+        if "#" in line:
+            poseSequence[index].rawNormalize()
+            poseSequence.append(Pose())
+            count = 0
+            index += 1
+        else:
+            print(line)
+            x, y, con = line.split(" ")
+            node = Node(count, int(x), int(y), con)
+            poseSequence[index].addNode(node)
+            count += 1
+    person.addPoseSequence(poseSequence)
+    file.close()
+    return person
 
 inputData = open("out2.txt","w")
 outputData = open("out3.txt","w")
