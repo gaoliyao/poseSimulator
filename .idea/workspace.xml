@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93763012-380e-4f39-9672-88e79280aee3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out2.txt" afterPath="$PROJECT_DIR$/out2.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out3.txt" afterPath="$PROJECT_DIR$/out3.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Person.py" afterPath="$PROJECT_DIR$/Person.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data.txt" afterPath="$PROJECT_DIR$/data.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataHandler.py" afterPath="$PROJECT_DIR$/dataHandler.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loadPerson2.py" afterPath="$PROJECT_DIR$/loadPerson2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output.txt" afterPath="$PROJECT_DIR$/output.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/person2Frame.txt" afterPath="$PROJECT_DIR$/person2Frame.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/randomWalk.py" afterPath="$PROJECT_DIR$/randomWalk.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,36 +20,34 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/poseSimulator$generate_moving_box.coverage" NAME="generate_moving_box Coverage Results" MODIFIED="1509007156840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/generate_moving_box" />
     <SUITE FILE_PATH="coverage/poseSimulator$loadPerson1.coverage" NAME="loadPerson1 Coverage Results" MODIFIED="1509000510672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pose" />
-    <SUITE FILE_PATH="coverage/poseSimulator$loadPerson2.coverage" NAME="loadPerson2 Coverage Results" MODIFIED="1509084544228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/poseSimulator$loadPerson2.coverage" NAME="loadPerson2 Coverage Results" MODIFIED="1509090927017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poseSimulator$generate_moving_box__1_.coverage" NAME="generate_moving_box (1) Coverage Results" MODIFIED="1509047733723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poseSimulator$loadPerson1__1_.coverage" NAME="loadPerson1 (1) Coverage Results" MODIFIED="1509006338212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/generate_moving_box/pose" />
     <SUITE FILE_PATH="coverage/poseSimulator$randomWalk.coverage" NAME="randomWalk Coverage Results" MODIFIED="1509090735925" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/poseSimulator$dataHandler.coverage" NAME="dataHandler Coverage Results" MODIFIED="1509006202539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pose" />
+    <SUITE FILE_PATH="coverage/poseSimulator$dataHandler.coverage" NAME="dataHandler Coverage Results" MODIFIED="1509091494722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poseSimulator$loadPerson1__2_.coverage" NAME="loadPerson1 (2) Coverage Results" MODIFIED="1509058412484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="loadPerson1.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/loadPerson1.py">
+      <file leaf-file-name="randomWalk.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/randomWalk.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+            <state relative-caret-position="315">
+              <caret line="53" column="28" lean-forward="false" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
               <folding>
-                <element signature="e#0#21#0" expanded="true" />
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="randomWalk.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/randomWalk.py">
+      <file leaf-file-name="out.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/out.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="71" column="40" lean-forward="true" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="40" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="375">
+              <caret line="25" column="140" lean-forward="false" selection-start-line="25" selection-start-column="140" selection-end-line="25" selection-end-column="140" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -70,22 +72,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="out2.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/out2.txt">
+      <file leaf-file-name="Person.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Person.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="58" lean-forward="true" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="person1Frame.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/person1Frame.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="6" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-              <folding />
+            <state relative-caret-position="438">
+              <caret line="66" column="256" lean-forward="false" selection-start-line="66" selection-start-column="256" selection-end-line="66" selection-end-column="256" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -93,18 +87,40 @@
       <file leaf-file-name="output.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/output.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="48" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+            <state relative-caret-position="436">
+              <caret line="299" column="0" lean-forward="true" selection-start-line="299" selection-start-column="0" selection-end-line="299" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="person2Frame.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dataHandler.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dataHandler.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="data.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="385">
+              <caret line="70" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="person2Frame.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/person2Frame.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3375">
-              <caret line="225" column="16" lean-forward="true" selection-start-line="225" selection-start-column="16" selection-end-line="225" selection-end-column="16" />
+            <state relative-caret-position="135">
+              <caret line="9" column="1190" lean-forward="false" selection-start-line="9" selection-start-column="1190" selection-end-line="9" selection-end-column="1190" />
               <folding />
             </state>
           </provider>
@@ -113,20 +129,8 @@
       <file leaf-file-name="loadPerson2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/loadPerson2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="19" lean-forward="true" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Person.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Person.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="64" column="16" lean-forward="true" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
+            <state relative-caret-position="390">
+              <caret line="26" column="28" lean-forward="false" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -148,6 +152,9 @@
       <find>Pose(</find>
       <find>poseSequence.append</find>
       <find>.0</find>
+      <find>837 327 0.151863</find>
+      <find>802 164 0.554142</find>
+      <find>790 307 0.075482</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -169,13 +176,15 @@
         <option value="$PROJECT_DIR$/generate_moving_box.py" />
         <option value="$PROJECT_DIR$/Node.py" />
         <option value="$PROJECT_DIR$/loadPerson1.py" />
-        <option value="$PROJECT_DIR$/person2Frame.txt" />
-        <option value="$PROJECT_DIR$/loadPerson2.py" />
         <option value="$PROJECT_DIR$/Pose.py" />
         <option value="$PROJECT_DIR$/out2.txt" />
         <option value="$PROJECT_DIR$/out3.txt" />
-        <option value="$PROJECT_DIR$/Person.py" />
+        <option value="$PROJECT_DIR$/loadPerson2.py" />
+        <option value="$PROJECT_DIR$/dataHandler.py" />
         <option value="$PROJECT_DIR$/randomWalk.py" />
+        <option value="$PROJECT_DIR$/Person.py" />
+        <option value="$PROJECT_DIR$/data.txt" />
+        <option value="$PROJECT_DIR$/person2Frame.txt" />
       </list>
     </option>
   </component>
@@ -250,26 +259,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.randomWalk">
-    <configuration default="false" name="generate_moving_box" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/generate_moving_box" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="poseSimulator" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/generate_moving_box/generate_moving_box.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.dataHandler">
     <configuration default="false" name="generate_moving_box (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -341,6 +331,25 @@
       <module name="poseSimulator" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/loadPerson2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="dataHandler" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="poseSimulator" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dataHandler.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -495,19 +504,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.generate_moving_box" />
-      <item index="1" class="java.lang.String" itemvalue="Python.generate_moving_box (1)" />
-      <item index="2" class="java.lang.String" itemvalue="Python.loadPerson1 (2)" />
-      <item index="3" class="java.lang.String" itemvalue="Python.randomWalk" />
-      <item index="4" class="java.lang.String" itemvalue="Python.loadPerson2" />
+      <item index="0" class="java.lang.String" itemvalue="Python.generate_moving_box (1)" />
+      <item index="1" class="java.lang.String" itemvalue="Python.loadPerson1 (2)" />
+      <item index="2" class="java.lang.String" itemvalue="Python.randomWalk" />
+      <item index="3" class="java.lang.String" itemvalue="Python.loadPerson2" />
+      <item index="4" class="java.lang.String" itemvalue="Python.dataHandler" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.randomWalk" />
+        <item index="0" class="java.lang.String" itemvalue="Python.dataHandler" />
         <item index="1" class="java.lang.String" itemvalue="Python.loadPerson2" />
-        <item index="2" class="java.lang.String" itemvalue="Python.loadPerson1 (2)" />
-        <item index="3" class="java.lang.String" itemvalue="Python.generate_moving_box (1)" />
-        <item index="4" class="java.lang.String" itemvalue="Python.generate_moving_box" />
+        <item index="2" class="java.lang.String" itemvalue="Python.randomWalk" />
+        <item index="3" class="java.lang.String" itemvalue="Python.loadPerson1 (2)" />
+        <item index="4" class="java.lang.String" itemvalue="Python.generate_moving_box (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -534,7 +543,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28713858" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28713858" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -560,17 +569,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/randomWalk.py</url>
-          <line>59</line>
+          <line>62</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/randomWalk.py</url>
-          <line>55</line>
+          <line>58</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/randomWalk.py</url>
-          <line>60</line>
+          <line>63</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -688,14 +697,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/out.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="140" lean-forward="false" selection-start-line="25" selection-start-column="140" selection-end-line="25" selection-end-column="140" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/generate_moving_box.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="443">
@@ -714,14 +715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/loadPerson1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -732,54 +725,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/person2Frame.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3375">
-          <caret line="225" column="16" lean-forward="true" selection-start-line="225" selection-start-column="16" selection-end-line="225" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/output.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="48" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/person1Frame.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="6" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loadPerson2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="19" lean-forward="true" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Person.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="64" column="16" lean-forward="true" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pose.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="62" column="8" lean-forward="false" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -792,6 +741,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/loadPerson2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="28" lean-forward="false" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataHandler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pose.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="62" column="8" lean-forward="false" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/randomWalk.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="53" column="28" lean-forward="false" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Person.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="66" column="256" lean-forward="false" selection-start-line="66" selection-start-column="256" selection-end-line="66" selection-end-column="256" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/out3.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -800,13 +797,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/randomWalk.py">
+    <entry file="file://$PROJECT_DIR$/out.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="71" column="40" lean-forward="true" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="375">
+          <caret line="25" column="140" lean-forward="false" selection-start-line="25" selection-start-column="140" selection-end-line="25" selection-end-column="140" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="299" column="0" lean-forward="true" selection-start-line="299" selection-start-column="0" selection-end-line="299" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="70" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/person2Frame.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="1190" lean-forward="false" selection-start-line="9" selection-start-column="1190" selection-end-line="9" selection-end-column="1190" />
+          <folding />
         </state>
       </provider>
     </entry>

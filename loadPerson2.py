@@ -24,13 +24,14 @@ for line in file:
         poseSequence[index].addNode(node)
         count += 1
 person.addPoseSequence(poseSequence)
-currWin = GraphWin("window", 1000, 1000)
+currWin = GraphWin("window", 100, 100)
 for poseIndex in person.getPoseSequence():
-    currWin = GraphWin("window", 1000, 1000)
+    currWin = GraphWin("window", 100, 100)
     for node in poseIndex.getNormalizedPoseNodes():
-        circle = Circle(Point(900 + node.getX(), node.getY()), 3)
+        circle = Circle(Point(0 + node.getX(), node.getY()), 3)
         circle.setFill("red")
         circle.draw(currWin)
-currWin.getMouse()
+    currWin.getMouse()
+
 file.close()
 

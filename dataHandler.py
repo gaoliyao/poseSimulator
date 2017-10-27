@@ -1,8 +1,7 @@
-from pose.Comparator import Comparator
-from pose.Node import Node
-from pose.Person import Person
-
-from pose.Pose import Pose
+from Comparator import Comparator
+from Node import Node
+from Person import Person
+from Pose import Pose
 
 file = open("data.txt", 'r')
 output = []
@@ -32,7 +31,7 @@ for line in file:
             print(count, numbers[j], numbers[j+1], numbers[j+2])
             pose.addNode(Node(count, float(numbers[j]), float(numbers[j+1]), float(numbers[j+2])))
             count += 1
-        if pose.getAveConfidence() >= 0.65:
+        if pose.getAveConfidence() >= 0.5:
             if existPerson(pose) != False:
                 existPerson(pose).addPose(pose)
             else:

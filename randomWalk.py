@@ -47,8 +47,11 @@ box_width_height = (10,10)
 moving_speed = 10
 gap = 1
 person1 = loadPersonOne()
+person1.setOriginalAngle(270)
 person2 = loadPersonOne()
+person2.setOriginalAngle(270)
 person3 = loadPersonOne()
+person3.setOriginalAngle(270)
 
 # Write the first data
 for i in range(1, 101):

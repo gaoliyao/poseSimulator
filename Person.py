@@ -64,7 +64,7 @@ class Person:
         minX, minY, maxX, maxY = newPose.getBound()
         xMean = maxX / 2
         for node in self.poseSequence[self.poseIndex % len(self.poseSequence)].getNormalizedPoseNodes():
-            newNode = Node(node.getID(), self.currX + (node.getX() - xMean) * math.cos(math.radians(direction + 90)), self.currY + node.getY() + 0.25 * (node.getX() - xMean) * math.sin(math.radians(direction + 90)), node.getConfidence())
+            newNode = Node(node.getID(), self.currX + (node.getX() - xMean) * math.cos(math.radians(direction + 360 - self.originalAngle)), self.currY + node.getY() + 0.25 * (node.getX() - xMean) * math.sin(math.radians(direction + 360 - self.originalAngle)), node.getConfidence())
             newPose.addNode(newNode)
         self.walkingTrace.append(newPose)
         self.poseIndex += 1
