@@ -1,8 +1,8 @@
 from random import randint
 
 from Node import Node
-from Person import Person
-from Pose import Pose
+from poseModel.Person import Person
+from poseModel.Pose import Pose
 
 
 def loadPersonOne():

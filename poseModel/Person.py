@@ -1,6 +1,7 @@
-from Node import Node
-from Pose import Pose
 import math
+from random import randint
+from Node import Node
+from poseModel.Pose import Pose
 
 
 class Person:
@@ -19,6 +20,15 @@ class Person:
         self.nextPosePrediction = []
         self.currX = 0
         self.currY = 0
+        self.speed = 0
+        self.direction = 0
+        self.poseIndex = 0
+        self.walkingTrace = []
+    def __init__(self, width, height):
+        self.poseSequence = []
+        self.nextPosePrediction = []
+        self.currX =randint(int(width/5), int(width*4/5))
+        self.currY = randint(int(height/5), int(height*4/5))
         self.speed = 0
         self.direction = 0
         self.poseIndex = 0

@@ -35,3 +35,6 @@ class Node:
         return round(self.y, 6)
     def getID(self):
         return self.id
+    def invalid(self):
+        self.x = -1
+        self.y = -1

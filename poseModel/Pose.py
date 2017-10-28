@@ -11,7 +11,7 @@ class Pose:
     def __init__(self):
         self.poseNodes = []
         self.normalizedPoseNodes = []
-        self.showPoints
+        self.showPoints = []
         self.AveConfidence = 0.0
     def addNode(self, node):
         self.poseNodes.append(node)
@@ -32,7 +32,7 @@ class Pose:
         for p in self.showPoints:
             p.undraw()
     def getPoseNodes(self):
-        return self.poseNodes
+        return self.poseNodes[0: len(self.poseNodes)]
     def rawNormalize(self):
         for node in self.poseNodes:
             if node.getX() < self.minX:

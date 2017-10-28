@@ -1,7 +1,7 @@
 from Comparator import Comparator
 from Node import Node
-from Person import Person
-from Pose import Pose
+from poseModel.Person import Person
+from poseModel.Pose import Pose
 
 file = open("data.txt", 'r')
 output = []

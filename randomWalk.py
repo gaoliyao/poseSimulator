@@ -1,20 +1,24 @@
 from random import randint
 
 from Node import Node
-from Person import Person
-from Pose import Pose
+from poseModel.Person import Person
+from poseModel.Pose import Pose
 
 cameraHeight = 100
 cameraDistance = 100
 
+viewHeight = 1080
+viewWidth = 1980
+
+
 def loadPersonOne():
     file = open("person1Frame.txt", 'r')
     # currWin = None
-    person = Person()
+    person = Person(viewWidth, viewHeight)
     poseSequence = []
     count = 0
     index = 0
-    person.setOriginalAngle(270)
+    person.setOriginalAngle(225)
     poseSequence.append(Pose())
     for line in file:
         if "#" in line:
@@ -28,21 +32,14 @@ def loadPersonOne():
             poseSequence[index].addNode(node)
             count += 1
     person.addPoseSequence(poseSequence)
-    # currWin = GraphWin("window", 1000, 1000)
-    # for poseIndex in person.getPoseSequence():
-    #     currWin = GraphWin("window", 1000, 1000)
-    #     for node in poseIndex.getNormalizedPoseNodes():
-    #         circle = Circle(Point(node.getX(), node.getY()), 3)
-    #         circle.setFill("red")
-    #         circle.draw(currWin)
-    # currWin.getMouse()
     file.close()
     return person
+
 
 def loadPersonTwo():
     file = open("person2Frame.txt", 'r')
     # currWin = None
-    person = Person()
+    person = Person(viewWidth, viewHeight)
     person.setOriginalAngle(120)
     poseSequence = []
     count = 0
@@ -65,105 +62,117 @@ def loadPersonTwo():
     file.close()
     return person
 
-inputData = open("out2.txt","w")
-outputData = open("out3.txt","w")
-start_position = (0,0)
-box_width_height = (10,10)
+def getRandomRange():
+    x = randint(-91, 450)
+    y = randint(-91, 450)
+    z = 0
+    if x > y:
+        z = x
+        x = y
+        y = z
+    return x, y
+
+out2 = open("out2.txt", "w")
+out3 = open("out3.txt", "w")
+start_position = (0, 0)
+box_width_height = (10, 10)
 moving_speed = 10
 gap = 1
-person1 = loadPersonOne()
-person1.setOriginalAngle(270)
-person2 = loadPersonOne()
-person2.setOriginalAngle(270)
-person3 = loadPersonOne()
-person3.setOriginalAngle(270)
 
+randomX = 0
+randomY = 360
 # Write the first data
-for i in range(1, 101):
-    # person 1
-    speedOne = randint(10, 20)
-    directionOne = 0
-    if i % 10 == 0:
-        directionOne = randint(-1, 361)
-    person1.walk(speedOne, directionOne)
-    currPoseOne = person1.getCurrentWalkingPose()
-    minX, minY, maxX, maxY = currPoseOne.getBound()
-    outputData.write(str(minX) + " " + str(minY) + " " + str(maxX) + " " + str(maxY) + " ")
-    for node in currPoseOne.getPoseNodes():
-        inputData.write(str(node.getX()) + " " + str(node.getY()) + " ")
+for j in range(0, 1):
+    person1 = loadPersonOne()
+    person2 = loadPersonOne()
+    person3 = loadPersonOne()
 
-    # person 2
-    speedTwo = randint(10, 20)
-    directionTwo = 45
-    if i % 10 == 0:
-        directionTwo = randint(-1, 361)
-    person2.walk(speedTwo, directionTwo)
-    currPoseTwo = person2.getCurrentWalkingPose()
-    minX, minY, maxX, maxY = currPoseTwo.getBound()
-    outputData.write(str(minX) + " " + str(minY) + " " + str(maxX) + " " + str(maxY) + " ")
-    for node in currPoseTwo.getPoseNodes():
-        inputData.write(str(node.getX()) + " " + str(node.getY()) + " ")
+    for i in range(1, 56):
+        currPose = []
+        # person 1
+        speedOne = randint(10, 20)
+        directionOne = 0
+        if i % 10 == 0:
+            randX , randY = getRandomRange()
+            directionOne += randint(randX, randY)
+        person1.walk(speedOne, directionOne)
+        currPoseOne = person1.getCurrentWalkingPose()
+        currPose.append(currPoseOne)
 
-    # person 3
-    speedThree = randint(10, 20)
-    directionThree = 90
-    if i % 10 == 0:
-        directionThree = randint(-1, 361)
-    person3.walk(speedThree, directionThree)
-    currPoseThree = person3.getCurrentWalkingPose()
-    minX, minY, maxX, maxY = currPoseThree.getBound()
-    outputData.write(str(minX) + " " + str(minY) + " " + str(maxX) + " " + str(maxY) + " ")
-    for node in currPoseThree.getPoseNodes():
-        inputData.write(str(node.getX()) + " " + str(node.getY()) + " ")
 
-    inputData.write("\n")
-    outputData.write("\n")
+        # person 2
+        speedTwo = randint(10, 20)
+        directionTwo = 45
+        if i % 10 == 0:
+            directionTwo = randint(-1, 361)
+        person2.walk(speedTwo, directionTwo)
+        currPoseTwo = person2.getCurrentWalkingPose()
+        currPose.append(currPoseTwo)
+
+
+        # person 3
+        speedThree = randint(10, 20)
+        directionThree = 90
+        if i % 10 == 0:
+            directionThree = randint(-1, 361)
+        person3.walk(speedThree, directionThree)
+        currPoseThree = person3.getCurrentWalkingPose()
+        currPose.append(currPoseThree)
+
+
+        minX1, minY1, maxX1, maxY1 = currPoseOne.getBound()
+        if minX1 < 0 or minY1 < 0 or maxX1 >= 1980 or maxY1 >= 1080:
+            out3.write("-1 -1 -1 -1 ")
+            for n in currPose[0].getPoseNodes():
+                n.invalid()
+        else:
+            out3.write(str(minX1) + " " + str(minY1) + " " + str(maxX1) + " " + str(maxY1) + " ")
+
+        minX2, minY2, maxX2, maxY2 = currPoseTwo.getBound()
+        if minX2 < 0 or minY2 < 0 or maxX2 >= 1980 or maxY2 >= 1080:
+            out3.write("-1 -1 -1 -1 ")
+            for n in currPose[1].getPoseNodes():
+                n.invalid()
+        else:
+            out3.write(str(minX2) + " " + str(minY2) + " " + str(maxX2) + " " + str(maxY2) + " ")
+
+        minX3, minY3, maxX3, maxY3 = currPoseThree.getBound()
+        if minX3 < 0 or minY3 < 0 or maxX3 >= 1980 or maxY3 >= 1080:
+            out3.write("-1 -1 -1 -1 ")
+            for n in currPose[2].getPoseNodes():
+                n.invalid()
+        else:
+            out3.write(str(minX3) + " " + str(minY3) + " " + str(maxX3) + " " + str(maxY3) + " ")
+
+        for i in range(0, 3):
+            index = randint(0, len(currPose)-1)
+            for node in currPose[index].getPoseNodes():
+                out2.write(str(node.getX()) + " " + str(node.getY()) + " ")
+            currPose.remove(currPose[index])
+
+
+        out2.write("\n")
+        out3.write("\n")
+
 # Generate horizontal moving box
-# loop_p = start_position
-# for i in range(1,11):
-#     moving_speed = randint(10,20)
-#     (tmp_x,tmp_y) = loop_p
-#     tmp_x += moving_speed + gap
-#     person = loadPersonOne()
-#     currPose = person.getPoseSequence()[i % len(person.getPoseSequence())]
-#     outputStr = "0 " + "frame" + str(i) + " "
-#     for node in currPose.getPoseNodes():
-#         node.normalize(-tmp_x, -tmp_y, 5)
-#         outputStr += str(node.getX()) + " " + str(node.getY()) + " " + str(node.getConfidence()) + " "
-#     out.write(outputStr + "\n")
-#     loop_p = (tmp_x,tmp_y)
-#
-# # Generate vertical moving box
-# loop_p = start_position
-# for i in range(1,11):
-#     moving_speed = randint(10,20)
-#     (tmp_x,tmp_y) = loop_p
-#     tmp_y += moving_speed + gap
-#     person = loadPersonOne()
-#     currPose = person.getPoseSequence()[i % len(person.getPoseSequence())]
-#     outputStr = "1 " + "frame" + str(i) + " "
-#     for node in currPose.getPoseNodes():
-#         node.normalize(-tmp_x, -tmp_y, 5)
-#         outputStr += str(node.getX()) + " " + str(node.getY()) + " " + str(node.getConfidence()) + " "
-#     out.write(outputStr + "\n")
-#     loop_p = (tmp_x, tmp_y)
-#
-# # Generate diagonal moving box
-# moving_speed = 14
-# loop_p = start_position
-# for i in range(1,11):
-#     moving_speed = randint(14,20)
-#     (tmp_x,tmp_y) = loop_p
-#     tmp_x += moving_speed + gap
-#     tmp_y += moving_speed + gap
-#     person = loadPersonOne()
-#     currPose = person.getPoseSequence()[i % len(person.getPoseSequence())]
-#     outputStr = "2 " + "frame" + str(i) + " "
-#     for node in currPose.getPoseNodes():
-#         node.normalize(-tmp_x, -tmp_y, 5)
-#         outputStr += str(node.getX()) + " " + str(node.getY()) + " " + str(node.getConfidence()) + " "
-#     out.write(outputStr + "\n")
-#     loop_p = (tmp_x, tmp_y)
+
+out2.close()
+out3.close()
+
+inputData = open("inputData.txt", 'w')
+outputData = open("outputData.txt", 'w')
+
+out2 = open("out2.txt", 'r')
+out3 = open("out3.txt", 'r')
+
+for line in out2:
+    if line != "\n":
+        inputData.write(line)
+
+for line in out3:
+    b = "100000 100000 -1 -1 100000 100000 -1 -1 100000 100000 -1 -1 " in line
+    if b == False:
+        outputData.write(line)
 
 inputData.close()
 outputData.close()

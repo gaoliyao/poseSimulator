@@ -1,7 +1,7 @@
 from Node import Node
-from Person import Person
-from Pose import Pose
 from graphics import GraphWin, Circle, Point
+from poseModel.Person import Person
+from poseModel.Pose import Pose
 
 file = open("person2Frame.txt", 'r')
 # currWin = None
