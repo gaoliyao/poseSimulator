@@ -1,11 +1,11 @@
-from Comparator import Comparator
-from Node import Node
+from poseModel.Node import Node
 from poseModel.Person import Person
 from poseModel.Pose import Pose
+from utils.Comparator import Comparator
 
-file = open("data.txt", 'r')
+file = open("/data/data.txt", 'r')
 output = []
-output = open("output.txt", 'w')
+output = open("/data/output.txt", 'w')
 person = []
 comparator = Comparator()
 

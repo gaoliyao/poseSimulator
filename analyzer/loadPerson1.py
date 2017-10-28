@@ -1,9 +1,9 @@
-from Node import Node
-from graphics import GraphWin, Circle, Point
+from poseModel.Node import Node
 from poseModel.Person import Person
 from poseModel.Pose import Pose
+from poseModel.graphics import GraphWin, Circle, Point
 
-file = open("person1Frame.txt", 'r')
+file = open("/data/person1Frame.txt", 'r')
 # currWin = None
 person = Person()
 poseSequence = []

@@ -1,12 +1,12 @@
 from random import randint
 
-from Node import Node
+from poseModel.Node import Node
 from poseModel.Person import Person
 from poseModel.Pose import Pose
 
 
 def loadPersonOne():
-    file = open("person1Frame.txt", 'r')
+    file = open("/data/person1Frame.txt", 'r')
     # currWin = None
     person = Person()
     poseSequence = []
@@ -38,7 +38,7 @@ def loadPersonOne():
 
 
 
-out = open("out.txt","w")
+out = open("/data/out.txt","w")
 start_position = (0,0)
 box_width_height = (10,10)
 moving_speed = 10

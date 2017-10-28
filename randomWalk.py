@@ -1,18 +1,23 @@
 from random import randint
-
-from Node import Node
+import os
+from poseModel.Node import Node
 from poseModel.Person import Person
 from poseModel.Pose import Pose
 
+# Change the parameters here
+# the number of frame
+# iter time
+frameNum = 50
+iterationTime = 100
 cameraHeight = 100
 cameraDistance = 100
-
 viewHeight = 1080
 viewWidth = 1980
 
+cwd = os.getcwd()
 
 def loadPersonOne():
-    file = open("person1Frame.txt", 'r')
+    file = open(cwd + "/data/person1Frame.txt", 'r')
     # currWin = None
     person = Person(viewWidth, viewHeight)
     poseSequence = []
@@ -37,7 +42,7 @@ def loadPersonOne():
 
 
 def loadPersonTwo():
-    file = open("person2Frame.txt", 'r')
+    file = open(cwd + "/data/person2Frame.txt", 'r')
     # currWin = None
     person = Person(viewWidth, viewHeight)
     person.setOriginalAngle(120)
@@ -72,8 +77,8 @@ def getRandomRange():
         y = z
     return x, y
 
-out2 = open("out2.txt", "w")
-out3 = open("out3.txt", "w")
+out2 = open(cwd + "/data/out2.txt", "w")
+out3 = open(cwd + "/data/out3.txt", "w")
 start_position = (0, 0)
 box_width_height = (10, 10)
 moving_speed = 10
@@ -82,12 +87,12 @@ gap = 1
 randomX = 0
 randomY = 360
 # Write the first data
-for j in range(0, 10):
+for j in range(0, iterationTime):
     person1 = loadPersonOne()
     person2 = loadPersonOne()
     person3 = loadPersonOne()
 
-    for i in range(1, 56):
+    for i in range(1, frameNum + int(frameNum/10) + 1):
         currPose = []
         # person 1
         speedOne = randint(10, 20)
@@ -159,11 +164,11 @@ for j in range(0, 10):
 out2.close()
 out3.close()
 
-inputData = open("inputData.txt", 'w')
-outputData = open("outputData.txt", 'w')
+inputData = open(cwd + "/data/inputData.txt", 'w')
+outputData = open(cwd + "/data/outputData.txt", 'w')
 
-out2 = open("out2.txt", 'r')
-out3 = open("out3.txt", 'r')
+out2 = open(cwd + "/data/out2.txt", 'r')
+out3 = open(cwd + "/data/out3.txt", 'r')
 
 for line in out2:
     if line != "\n":

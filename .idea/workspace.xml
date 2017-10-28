@@ -2,8 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93763012-380e-4f39-9672-88e79280aee3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out2.txt" afterPath="$PROJECT_DIR$/out2.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out3.txt" afterPath="$PROJECT_DIR$/out3.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/utils/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/visualization/__init__.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparator.py" afterPath="$PROJECT_DIR$/utils/Comparator.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Node.py" afterPath="$PROJECT_DIR$/poseModel/Node.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Normalzir.py" afterPath="$PROJECT_DIR$/analyzer/__init__.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/countNum.py" afterPath="$PROJECT_DIR$/analyzer/countNum.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/data.txt" afterPath="$PROJECT_DIR$/data/data.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dataHandler.py" afterPath="$PROJECT_DIR$/analyzer/dataHandler.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frame.txt" afterPath="$PROJECT_DIR$/data/frame.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frame1.txt" afterPath="$PROJECT_DIR$/data/frame1.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frame2.txt" afterPath="$PROJECT_DIR$/data/frame2.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/graphics.py" afterPath="$PROJECT_DIR$/poseModel/graphics.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/inputDataDemo.txt" afterPath="$PROJECT_DIR$/data/inputDataDemo.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/loadPerson1.py" afterPath="$PROJECT_DIR$/analyzer/loadPerson1.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/loadPerson2.py" afterPath="$PROJECT_DIR$/analyzer/loadPerson2.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/out.txt" afterPath="$PROJECT_DIR$/data/out.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/out2.txt" afterPath="$PROJECT_DIR$/data/out2.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/out3.txt" afterPath="$PROJECT_DIR$/data/out3.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/output.txt" afterPath="$PROJECT_DIR$/data/output.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/outputDataDemo.txt" afterPath="$PROJECT_DIR$/data/outputDataDemo.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/person1Frame.txt" afterPath="$PROJECT_DIR$/data/person1Frame.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/person2Frame.txt" afterPath="$PROJECT_DIR$/data/person2Frame.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/poseVisualizer.py" afterPath="$PROJECT_DIR$/visualization/poseVisualizer.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/rect2.png" afterPath="$PROJECT_DIR$/data/rect2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testingInputData.txt" afterPath="$PROJECT_DIR$/data/testingInputData.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testingOutputData.txt" afterPath="$PROJECT_DIR$/data/testingOutputData.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/vis_txt.py" afterPath="$PROJECT_DIR$/visualization/vis_txt.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generate_moving_box.py" afterPath="$PROJECT_DIR$/generate_moving_box.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/poseModel/Person.py" afterPath="$PROJECT_DIR$/poseModel/Person.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/poseModel/Pose.py" afterPath="$PROJECT_DIR$/poseModel/Pose.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/randomWalk.py" afterPath="$PROJECT_DIR$/randomWalk.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,30 +48,78 @@
     <SUITE FILE_PATH="coverage/poseSimulator$loadPerson2.coverage" NAME="loadPerson2 Coverage Results" MODIFIED="1509090927017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poseSimulator$generate_moving_box__1_.coverage" NAME="generate_moving_box (1) Coverage Results" MODIFIED="1509114725804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poseSimulator$loadPerson1__1_.coverage" NAME="loadPerson1 (1) Coverage Results" MODIFIED="1509006338212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/generate_moving_box/pose" />
-    <SUITE FILE_PATH="coverage/poseSimulator$randomWalk.coverage" NAME="randomWalk Coverage Results" MODIFIED="1509185055074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/poseSimulator$randomWalk.coverage" NAME="randomWalk Coverage Results" MODIFIED="1509186656201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poseSimulator$dataHandler.coverage" NAME="dataHandler Coverage Results" MODIFIED="1509092070370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poseSimulator$loadPerson1__2_.coverage" NAME="loadPerson1 (2) Coverage Results" MODIFIED="1509058412484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Person.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/poseModel/Person.py">
+      <file leaf-file-name="loadPerson1.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/analyzer/loadPerson1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="30" column="59" lean-forward="false" selection-start-line="30" selection-start-column="59" selection-end-line="30" selection-end-column="59" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="30">
+              <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Pose.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/poseModel/Pose.py">
+      <file leaf-file-name="dataHandler.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/analyzer/dataHandler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3">
-              <caret line="34" column="52" lean-forward="false" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
+            <state relative-caret-position="75">
+              <caret line="8" column="11" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Person.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/poseModel/Person.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="329">
+              <caret line="31" column="59" lean-forward="false" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="generate_moving_box.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/generate_moving_box.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-309">
+              <caret line="40" column="18" lean-forward="false" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loadPerson2.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/analyzer/loadPerson2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="countNum.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/analyzer/countNum.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="poseVisualizer.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/visualization/poseVisualizer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -51,8 +128,8 @@
       <file leaf-file-name="randomWalk.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/randomWalk.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="86" column="29" lean-forward="true" selection-start-line="85" selection-start-column="29" selection-end-line="86" selection-end-column="29" />
+            <state relative-caret-position="90">
+              <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -60,41 +137,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="person1Frame.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/person1Frame.txt">
+      <file leaf-file-name="vis_txt.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/visualization/vis_txt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="597">
-              <caret line="187" column="1" lean-forward="false" selection-start-line="187" selection-start-column="1" selection-end-line="187" selection-end-column="1" />
+            <state relative-caret-position="105">
+              <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Node.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Node.py">
+        <entry file="file://$PROJECT_DIR$/poseModel/Node.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="585">
               <caret line="39" column="19" lean-forward="false" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="inputData.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inputData.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="outputData.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/outputData.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="102" lean-forward="true" selection-start-line="32" selection-start-column="102" selection-end-line="32" selection-end-column="102" />
               <folding />
             </state>
           </provider>
@@ -121,6 +178,8 @@
       <find>inputData</find>
       <find>outputData</find>
       <find>poseIndex</find>
+      <find>op</find>
+      <find>open</find>
     </findStrings>
     <replaceStrings>
       <replace>out3</replace>
@@ -142,15 +201,11 @@
         <option value="$PROJECT_DIR$/generate_moving_box/generate_moving_box.py" />
         <option value="$PROJECT_DIR$/pose/Pose.py" />
         <option value="$PROJECT_DIR$/out.txt" />
-        <option value="$PROJECT_DIR$/loadPerson1.py" />
-        <option value="$PROJECT_DIR$/loadPerson2.py" />
         <option value="$PROJECT_DIR$/data.txt" />
         <option value="$PROJECT_DIR$/person2Frame.txt" />
-        <option value="$PROJECT_DIR$/dataHandler.py" />
         <option value="$PROJECT_DIR$/Normalzir.py" />
         <option value="$PROJECT_DIR$/Pose.py" />
         <option value="$PROJECT_DIR$/Person.py" />
-        <option value="$PROJECT_DIR$/generate_moving_box.py" />
         <option value="$PROJECT_DIR$/person1Frame.txt" />
         <option value="$PROJECT_DIR$/poseModel/Pose.py" />
         <option value="$PROJECT_DIR$/Node.py" />
@@ -159,6 +214,12 @@
         <option value="$PROJECT_DIR$/inputData.txt" />
         <option value="$PROJECT_DIR$/poseModel/Person.py" />
         <option value="$PROJECT_DIR$/outputData.txt" />
+        <option value="$PROJECT_DIR$/vis_txt.py" />
+        <option value="$PROJECT_DIR$/generate_moving_box.py" />
+        <option value="$PROJECT_DIR$/loadPerson2.py" />
+        <option value="$PROJECT_DIR$/countNum.py" />
+        <option value="$PROJECT_DIR$/loadPerson1.py" />
+        <option value="$PROJECT_DIR$/dataHandler.py" />
         <option value="$PROJECT_DIR$/randomWalk.py" />
       </list>
     </option>
@@ -202,20 +263,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poseSimulator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poseSimulator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poseModel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -228,9 +275,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/pose" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/generate_moving_box" />
+      <recent name="$PROJECT_DIR$/utils" />
+      <recent name="$PROJECT_DIR$/poseModel" />
+      <recent name="$PROJECT_DIR$/visualization" />
+      <recent name="$PROJECT_DIR$/data" />
+      <recent name="$PROJECT_DIR$/analyzer" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -282,7 +331,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="poseSimulator" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/loadPerson1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analyzer/loadPerson1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -320,7 +369,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="poseSimulator" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/loadPerson2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analyzer/loadPerson2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -339,7 +388,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="poseSimulator" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dataHandler.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analyzer/dataHandler.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -527,15 +576,16 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32901296" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32901296" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3459621" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -544,7 +594,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -561,7 +610,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/loadPerson1.py">
+    <entry file="file://$PROJECT_DIR$/analyzer/loadPerson1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
@@ -569,7 +618,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/out.txt">
+    <entry file="file://$PROJECT_DIR$/data/out.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -577,7 +626,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rect2.png">
+    <entry file="file://$PROJECT_DIR$/data/rect2.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -586,13 +635,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="27" column="30" lean-forward="false" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Node.py">
+    <entry file="file://$PROJECT_DIR$/poseModel/Node.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
@@ -600,7 +647,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/poseVisualizer.py">
+    <entry file="file://$PROJECT_DIR$/visualization/poseVisualizer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -632,12 +679,12 @@
     <entry file="file://$PROJECT_DIR$/pose/loadPerson1.py" />
     <entry file="file://$PROJECT_DIR$/poseModel/Person.py" />
     <entry file="file://$PROJECT_DIR$/poseModel/Pose.py" />
-    <entry file="file://$PROJECT_DIR$/rect2.png">
+    <entry file="file://$PROJECT_DIR$/data/rect2.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/out.txt">
+    <entry file="file://$PROJECT_DIR$/data/out.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="140" lean-forward="false" selection-start-line="25" selection-start-column="140" selection-end-line="25" selection-end-column="140" />
@@ -645,7 +692,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data.txt">
+    <entry file="file://$PROJECT_DIR$/data/data.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1920">
           <caret line="175" column="1652" lean-forward="true" selection-start-line="175" selection-start-column="1652" selection-end-line="175" selection-end-column="1652" />
@@ -653,7 +700,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/output.txt">
+    <entry file="file://$PROJECT_DIR$/data/output.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="26" column="32" lean-forward="false" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="32" />
@@ -661,7 +708,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/person2Frame.txt">
+    <entry file="file://$PROJECT_DIR$/data/person2Frame.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2850">
           <caret line="190" column="0" lean-forward="false" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
@@ -669,44 +716,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/countNum.py">
+    <entry file="file://$PROJECT_DIR$/poseModel/graphics.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataHandler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="37" lean-forward="false" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#33#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graphics.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loadPerson1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loadPerson2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -719,23 +732,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generate_moving_box.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Normalzir.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Comparator.py">
+    <entry file="file://$PROJECT_DIR$/utils/Comparator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="24" lean-forward="true" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
@@ -751,15 +748,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/poseVisualizer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/person1Frame.txt">
+    <entry file="file://$PROJECT_DIR$/data/person1Frame.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="597">
           <caret line="187" column="1" lean-forward="false" selection-start-line="187" selection-start-column="1" selection-end-line="187" selection-end-column="1" />
@@ -775,7 +764,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/out2.txt">
+    <entry file="file://$PROJECT_DIR$/data/out2.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -794,14 +783,12 @@
     <entry file="file://$PROJECT_DIR$/poseModel/Person.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
-          <caret line="30" column="59" lean-forward="false" selection-start-line="30" selection-start-column="59" selection-end-line="30" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
+          <caret line="31" column="59" lean-forward="false" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="59" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/out3.txt">
+    <entry file="file://$PROJECT_DIR$/data/out3.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="121" lean-forward="true" selection-start-line="11" selection-start-column="121" selection-end-line="11" selection-end-column="121" />
@@ -809,7 +796,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Node.py">
+    <entry file="file://$PROJECT_DIR$/poseModel/Node.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
           <caret line="39" column="19" lean-forward="false" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
@@ -825,7 +812,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/outputData.txt">
+    <entry file="file://$PROJECT_DIR$/data/outputData.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="32" column="102" lean-forward="true" selection-start-line="32" selection-start-column="102" selection-end-line="32" selection-end-column="102" />
@@ -833,10 +820,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/visualization/vis_txt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generate_moving_box.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-309">
+          <caret line="40" column="18" lean-forward="false" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer/loadPerson2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer/dataHandler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="8" column="11" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Normalzir.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/visualization/poseVisualizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer/loadPerson1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer/countNum.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/randomWalk.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="86" column="29" lean-forward="true" selection-start-line="85" selection-start-column="29" selection-end-line="86" selection-end-column="29" />
+        <state relative-caret-position="90">
+          <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

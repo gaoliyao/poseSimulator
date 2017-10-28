@@ -1,4 +1,4 @@
-file = open("frame2.txt")
+file = open("/data/frame2.txt")
 count = 0
 for line in file:
     num = line.split(" ")

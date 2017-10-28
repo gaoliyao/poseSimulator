@@ -1,6 +1,7 @@
 import math
 from random import randint
-from Node import Node
+
+from poseModel.Node import Node
 from poseModel.Pose import Pose
 
 

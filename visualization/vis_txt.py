@@ -6,7 +6,7 @@ ax2 = fig2.add_subplot(111)
 ax2.set_xlim([0, 200])
 ax2.set_ylim([0, 200])
 
-txt = open("out.txt")
+txt = open("/data/out.txt")
 for l in txt:
     arrs = l.split()
     print(arrs)

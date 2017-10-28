@@ -1,4 +1,4 @@
-from graphics import *
+from poseModel.graphics import *
 file = open("person1Frame.txt", 'r')
 currWin = None
 for line in file:

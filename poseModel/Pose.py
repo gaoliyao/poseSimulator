@@ -1,4 +1,4 @@
-from graphics import *
+from poseModel.graphics import *
 class Pose:
     poseNodes = []
     normalizedPoseNodes = []
