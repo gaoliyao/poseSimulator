@@ -82,7 +82,7 @@ gap = 1
 randomX = 0
 randomY = 360
 # Write the first data
-for j in range(0, 1):
+for j in range(0, 10):
     person1 = loadPersonOne()
     person2 = loadPersonOne()
     person3 = loadPersonOne()
