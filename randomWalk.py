@@ -1,75 +1,27 @@
 from random import randint
 import os
-from poseModel.Node import Node
-from poseModel.Person import Person
-from poseModel.Pose import Pose
+from utils.personLoading import loadPersonOne, loadPersonTwo
 
 # Change the parameters here
 # the number of frame
 # iter time
 frameNum = 50
-iterationTime = 100
+iterationTime = 1
 cameraHeight = 100
 cameraDistance = 100
 viewHeight = 1080
 viewWidth = 1980
+minSpeed = 10
+maxSpeed = 20
+walkingDirectionRange = [-90, 450]
 
 cwd = os.getcwd()
 
-def loadPersonOne():
-    file = open(cwd + "/data/person1Frame.txt", 'r')
-    # currWin = None
-    person = Person(viewWidth, viewHeight)
-    poseSequence = []
-    count = 0
-    index = 0
-    person.setOriginalAngle(225)
-    poseSequence.append(Pose())
-    for line in file:
-        if "#" in line:
-            poseSequence[index].rawNormalize()
-            poseSequence.append(Pose())
-            count = 0
-            index += 1
-        else:
-            x, y, con = line.split(" ")
-            node = Node(count, int(x), int(y), con)
-            poseSequence[index].addNode(node)
-            count += 1
-    person.addPoseSequence(poseSequence)
-    file.close()
-    return person
 
-
-def loadPersonTwo():
-    file = open(cwd + "/data/person2Frame.txt", 'r')
-    # currWin = None
-    person = Person(viewWidth, viewHeight)
-    person.setOriginalAngle(120)
-    poseSequence = []
-    count = 0
-    index = 0
-    poseSequence.append(Pose())
-    for line in file:
-        line = line.replace("\n", "")
-        if "#" in line:
-            poseSequence[index].rawNormalize()
-            poseSequence.append(Pose())
-            count = 0
-            index += 1
-        else:
-            print(line)
-            x, y, con = line.split(" ")
-            node = Node(count, int(x), int(y), con)
-            poseSequence[index].addNode(node)
-            count += 1
-    person.addPoseSequence(poseSequence)
-    file.close()
-    return person
 
 def getRandomRange():
-    x = randint(-91, 450)
-    y = randint(-91, 450)
+    x = randint(walkingDirectionRange[0], walkingDirectionRange[1])
+    y = randint(walkingDirectionRange[0], walkingDirectionRange[1])
     z = 0
     if x > y:
         z = x
@@ -86,16 +38,17 @@ gap = 1
 
 randomX = 0
 randomY = 360
-# Write the first data
+
+# perform random walk
 for j in range(0, iterationTime):
-    person1 = loadPersonOne()
-    person2 = loadPersonOne()
-    person3 = loadPersonOne()
+    person1 = loadPersonOne(cwd, viewWidth, viewHeight)
+    person2 = loadPersonOne(cwd, viewWidth, viewHeight)
+    person3 = loadPersonOne(cwd, viewWidth, viewHeight)
 
     for i in range(1, frameNum + int(frameNum/10) + 1):
         currPose = []
         # person 1
-        speedOne = randint(10, 20)
+        speedOne = randint(minSpeed, maxSpeed)
         directionOne = 0
         if i % 10 == 0:
             randX , randY = getRandomRange()
@@ -106,7 +59,7 @@ for j in range(0, iterationTime):
 
 
         # person 2
-        speedTwo = randint(10, 20)
+        speedTwo = randint(minSpeed, maxSpeed)
         directionTwo = 45
         if i % 10 == 0:
             directionTwo = randint(-1, 361)
@@ -116,7 +69,7 @@ for j in range(0, iterationTime):
 
 
         # person 3
-        speedThree = randint(10, 20)
+        speedThree = randint(minSpeed, maxSpeed)
         directionThree = 90
         if i % 10 == 0:
             directionThree = randint(-1, 361)
@@ -159,7 +112,6 @@ for j in range(0, iterationTime):
         out2.write("\n")
         out3.write("\n")
 
-# Generate horizontal moving box
 
 out2.close()
 out3.close()
@@ -170,6 +122,7 @@ outputData = open(cwd + "/data/outputData.txt", 'w')
 out2 = open(cwd + "/data/out2.txt", 'r')
 out3 = open(cwd + "/data/out3.txt", 'r')
 
+# this is for a bug in file operations, remove unrelated lines and spaces
 for line in out2:
     if line != "\n":
         inputData.write(line)
@@ -178,6 +131,7 @@ for line in out3:
     b = "100000 100000 -1 -1 100000 100000 -1 -1 100000 100000 -1 -1 " in line
     if b == False:
         outputData.write(line)
+# ***********************************************************************
 
 inputData.close()
 outputData.close()

@@ -15,6 +15,9 @@ class Person:
     direction = 0
     poseIndex = 0
     originalAngle = 0
+    originalDistance = 1800
+    viewHeight = 0
+    viewWidth = 0
 
     def __init__(self):
         self.poseSequence = []
@@ -28,6 +31,8 @@ class Person:
     def __init__(self, width, height):
         self.poseSequence = []
         self.nextPosePrediction = []
+        self.viewHeight = height
+        self.viewWidth = width
         self.currX =randint(int(width/5), int(width*4/5))
         self.currY = randint(int(height/5), int(height*4/5))
         self.speed = 0
@@ -75,7 +80,7 @@ class Person:
         minX, minY, maxX, maxY = newPose.getBound()
         xMean = maxX / 2
         for node in self.poseSequence[self.poseIndex % len(self.poseSequence)].getNormalizedPoseNodes():
-            newNode = Node(node.getID(), self.currX + (node.getX() - xMean) * math.cos(math.radians(direction + 360 - self.originalAngle)), self.currY + node.getY() + 0.25 * (node.getX() - xMean) * math.sin(math.radians(direction + 360 - self.originalAngle)), node.getConfidence())
+            newNode = Node(node.getID(), self.currX + (1800 / self.getCurrentDistance())*(node.getX() - xMean) * math.cos(math.radians(direction + 360 - self.originalAngle)), self.currY + (1800 / self.getCurrentDistance())*(node.getY() + 0.25 * (node.getX() - xMean) * math.sin(math.radians(direction + 360 - self.originalAngle))), node.getConfidence())
             newPose.addNode(newNode)
         self.walkingTrace.append(newPose)
         self.poseIndex += 1
@@ -84,3 +89,7 @@ class Person:
         return self.walkingTrace[self.poseIndex - 1]
     def setOriginalAngle(self, angle):
         self.originalAngle = angle
+    def setOriginalDistance(self, distance):
+        self.originalDistance = distance
+    def getCurrentDistance(self):
+        return (self.currX**2 + (self.currY + self.viewHeight / 2)**2 + 540**2) ** 0.5
