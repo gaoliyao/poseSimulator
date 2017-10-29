@@ -1,10 +1,14 @@
 from random import randint
 import os
+
+from poseModel.Pose import Pose
 from utils.personLoading import loadPersonOne, loadPersonTwo
 
 # Change the parameters here
 # the number of frame
 # iter time
+from utils.pose import createNewPose
+
 frameNum = 50
 iterationTime = 1
 cameraHeight = 100
@@ -17,7 +21,58 @@ walkingDirectionRange = [-90, 450]
 
 cwd = os.getcwd()
 
+def getOverlap(x1, y1, x2, y2, x3, y3, x4, y4):
+    dx = min(x2, x4) - max(x1, x3)
+    dy = min(y2, y4) - max(y1, y3)
+    if (dx >= 0) and (dy >= 0):
+        return dx * dy / (x2 - x1) * (y2 - y1)
+    else:
+        return -1
+def checkOcclusion(currPose):
+    minX1, minY1, maxX1, maxY1 = currPose[0].getBound()
+    minX2, minY2, maxX2, maxY2 = currPose[1].getBound()
+    minX3, minY3, maxX3, maxY3 = currPose[2].getBound()
+    oAB = 0
+    oAC = 0
+    oBC = 0
+    if minX1 != -1:
+        oAB = getOverlap(minX1, minY1, maxX1, maxY1, minX2, minY2, maxX2, maxY2)
+    if minX2 != -1:
+        oAC = getOverlap(minX1, minY1, maxX1, maxY1, minX3, minY3, maxX3, maxY3)
+    if minX3 != -1:
+        oAC = getOverlap(minX2, minY2, maxX2, maxY2, minX3, minY3, maxX3, maxY3)
+    return oAB, oAC, oBC
 
+def occlusion(currPose):
+    oAB, oAC, oBC = checkOcclusion(currPose)
+    if oAB != -1:
+        if oAC != -1 and oBC != -1:
+            currPose.remove(currPose[2])
+            currPose.remove(currPose[1])
+        else:
+            newPose = createNewPose(currPose[0], currPose[1])
+            currPose.remove(currPose[0])
+            currPose.remove(currPose[0])
+            currPose.append(newPose)
+    elif oAC != -1:
+        if oAB != -1 and oBC != -1:
+            currPose.remove(currPose[2])
+            currPose.remove(currPose[1])
+        else:
+            newPose = createNewPose(currPose[0], currPose[2])
+            currPose.remove(currPose[2])
+            currPose.remove(currPose[0])
+            currPose.append(newPose)
+    elif oBC != -1:
+        if oAC != -1 and oAB != -1:
+            currPose.remove(currPose[2])
+            currPose.remove(currPose[1])
+        else:
+            newPose = createNewPose(currPose[1], currPose[2])
+            currPose.remove(currPose[2])
+            currPose.remove(currPose[1])
+            currPose.append(newPose)
+    return currPose
 
 def getRandomRange():
     x = randint(walkingDirectionRange[0], walkingDirectionRange[1])
@@ -40,6 +95,9 @@ randomX = 0
 randomY = 360
 
 # perform random walk
+
+
+
 for j in range(0, iterationTime):
     person1 = loadPersonOne(cwd, viewWidth, viewHeight)
     person2 = loadPersonOne(cwd, viewWidth, viewHeight)
@@ -77,6 +135,8 @@ for j in range(0, iterationTime):
         currPoseThree = person3.getCurrentWalkingPose()
         currPose.append(currPoseThree)
 
+        
+
 
         minX1, minY1, maxX1, maxY1 = currPoseOne.getBound()
         if minX1 < 0 or minY1 < 0 or maxX1 >= 1980 or maxY1 >= 1080:
@@ -101,8 +161,10 @@ for j in range(0, iterationTime):
                 n.invalid()
         else:
             out3.write(str(minX3) + " " + str(minY3) + " " + str(maxX3) + " " + str(maxY3) + " ")
+            
+        #currPose = occlusion(currPose)
 
-        for i in range(0, 3):
+        for i in range(0, len(currPose)):
             index = randint(0, len(currPose)-1)
             for node in currPose[index].getPoseNodes():
                 out2.write(str(node.getX()) + " " + str(node.getY()) + " ")

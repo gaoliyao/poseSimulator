@@ -4,7 +4,6 @@ from random import randint
 from poseModel.Node import Node
 from poseModel.Pose import Pose
 
-
 class Person:
     poseSequence = []
     walkingTrace = []
