@@ -18,6 +18,7 @@ viewWidth = 1980
 minSpeed = 10
 maxSpeed = 20
 walkingDirectionRange = [-90, 450]
+personNum = 3
 
 cwd = os.getcwd()
 
@@ -94,82 +95,41 @@ gap = 1
 randomX = 0
 randomY = 360
 
+personList = []
+
 # perform random walk
-
-
-
 for j in range(0, iterationTime):
-    person1 = loadPersonOne(cwd, viewWidth, viewHeight)
-    person2 = loadPersonOne(cwd, viewWidth, viewHeight)
-    person3 = loadPersonOne(cwd, viewWidth, viewHeight)
+    for k in range(0, personNum):
+        newPerson = loadPersonOne(cwd, viewWidth, viewHeight)
+        personList.append(newPerson)
 
     for i in range(1, frameNum + int(frameNum/10) + 1):
-        currPose = []
+
+        currPoseList = []
         # person 1
-        speedOne = randint(minSpeed, maxSpeed)
-        directionOne = 0
-        if i % 10 == 0:
-            randX , randY = getRandomRange()
-            directionOne += randint(randX, randY)
-        person1.walk(speedOne, directionOne)
-        currPoseOne = person1.getCurrentWalkingPose()
-        currPose.append(currPoseOne)
+        for person in personList:
+            speedOne = randint(minSpeed, maxSpeed)
+            direction = randint(0, 360)
+            if i % 10 == 0:
+                randX , randY = getRandomRange()
+                direction += randint(randX, randY)
+            person.walk(speedOne, direction)
+            currPose = person.getCurrentWalkingPose()
+            currPoseList.append(currPose)
 
+            minX, minY, maxX, maxY = currPose.getBound()
+            if minX < 0 or minY < 0 or maxX >= 1980 or maxY >= 1080:
+                out3.write("-1 -1 -1 -1 ")
+                for n in currPoseList[0].getPoseNodes():
+                    n.invalid()
+            else:
+                out3.write(str(minX) + " " + str(minY) + " " + str(maxX) + " " + str(maxY) + " ")
 
-        # person 2
-        speedTwo = randint(minSpeed, maxSpeed)
-        directionTwo = 45
-        if i % 10 == 0:
-            directionTwo = randint(-1, 361)
-        person2.walk(speedTwo, directionTwo)
-        currPoseTwo = person2.getCurrentWalkingPose()
-        currPose.append(currPoseTwo)
-
-
-        # person 3
-        speedThree = randint(minSpeed, maxSpeed)
-        directionThree = 90
-        if i % 10 == 0:
-            directionThree = randint(-1, 361)
-        person3.walk(speedThree, directionThree)
-        currPoseThree = person3.getCurrentWalkingPose()
-        currPose.append(currPoseThree)
-
-        
-
-
-        minX1, minY1, maxX1, maxY1 = currPoseOne.getBound()
-        if minX1 < 0 or minY1 < 0 or maxX1 >= 1980 or maxY1 >= 1080:
-            out3.write("-1 -1 -1 -1 ")
-            for n in currPose[0].getPoseNodes():
-                n.invalid()
-        else:
-            out3.write(str(minX1) + " " + str(minY1) + " " + str(maxX1) + " " + str(maxY1) + " ")
-
-        minX2, minY2, maxX2, maxY2 = currPoseTwo.getBound()
-        if minX2 < 0 or minY2 < 0 or maxX2 >= 1980 or maxY2 >= 1080:
-            out3.write("-1 -1 -1 -1 ")
-            for n in currPose[1].getPoseNodes():
-                n.invalid()
-        else:
-            out3.write(str(minX2) + " " + str(minY2) + " " + str(maxX2) + " " + str(maxY2) + " ")
-
-        minX3, minY3, maxX3, maxY3 = currPoseThree.getBound()
-        if minX3 < 0 or minY3 < 0 or maxX3 >= 1980 or maxY3 >= 1080:
-            out3.write("-1 -1 -1 -1 ")
-            for n in currPose[2].getPoseNodes():
-                n.invalid()
-        else:
-            out3.write(str(minX3) + " " + str(minY3) + " " + str(maxX3) + " " + str(maxY3) + " ")
-            
-        #currPose = occlusion(currPose)
-
-        for i in range(0, len(currPose)):
-            index = randint(0, len(currPose)-1)
-            for node in currPose[index].getPoseNodes():
+        for i in range(0, personNum):
+            index = randint(0, len(currPoseList)-1)
+            for node in currPoseList[index].getPoseNodes():
                 out2.write(str(node.getX()) + " " + str(node.getY()) + " ")
-            currPose.remove(currPose[index])
-
+            currPoseList.remove(currPoseList[index])
 
         out2.write("\n")
         out3.write("\n")
@@ -190,7 +150,7 @@ for line in out2:
         inputData.write(line)
 
 for line in out3:
-    b = "100000 100000 -1 -1 100000 100000 -1 -1 100000 100000 -1 -1 " in line
+    b = "100000 100000 -1 -1 " in line
     if b == False:
         outputData.write(line)
 # ***********************************************************************
