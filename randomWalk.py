@@ -8,17 +8,18 @@ from utils.personLoading import loadPersonOne, loadPersonTwo
 # the number of frame
 # iter time
 from utils.pose import createNewPose
+from visualize import draw
 
 frameNum = 50
-iterationTime = 1
+iterationTime = 100
 cameraHeight = 100
 cameraDistance = 100
 viewHeight = 1080
 viewWidth = 1980
 minSpeed = 10
 maxSpeed = 20
-walkingDirectionRange = [-90, 450]
-personNum = 3
+walkingDirectionRange = [-10, 10]
+personNum = 1
 
 cwd = os.getcwd()
 
@@ -95,12 +96,13 @@ gap = 1
 randomX = 0
 randomY = 360
 
-personList = []
 
 # perform random walk
 for j in range(0, iterationTime):
+    personList = []
     for k in range(0, personNum):
         newPerson = loadPersonOne(cwd, viewWidth, viewHeight)
+        newPerson.startFromEdge()
         personList.append(newPerson)
 
     for i in range(1, frameNum + int(frameNum/10) + 1):
@@ -109,8 +111,8 @@ for j in range(0, iterationTime):
         # person 1
         for person in personList:
             speedOne = randint(minSpeed, maxSpeed)
-            direction = randint(0, 360)
-            if i % 10 == 0:
+            direction = 0
+            if i % 20 == 0:
                 randX , randY = getRandomRange()
                 direction += randint(randX, randY)
             person.walk(speedOne, direction)
@@ -157,3 +159,5 @@ for line in out3:
 
 inputData.close()
 outputData.close()
+
+#draw()
