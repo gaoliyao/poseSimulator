@@ -99,25 +99,25 @@ class Person:
     def startFromEdge(self):
         case = randint(0, 3)
         if case == 0:
-            self.currX = 50
+            self.currX = 100
             if self.currY < self.viewHeight / 2:
                 self.walkingDirection = randint(285, 345)
             else:
                 self.walkingDirection = randint(15, 75)
         if case == 1:
-            self.currY = 50
+            self.currY = 100
             if self.currX < self.viewWidth / 2:
                 self.walkingDirection = randint(285, 345)
             else:
                 self.walkingDirection = randint(195, 255)
         if case == 2:
-            self.currX = self.viewWidth - 50
+            self.currX = self.viewWidth - 100
             if self.currY < self.viewHeight / 2:
                 self.walkingDirection = randint(195, 255)
             else:
                 self.walkingDirection = randint(105, 185)
         if case == 3:
-            self.currY = self.viewHeight - 50
+            self.currY = self.viewHeight - 100
             if self.currX < self.viewWidth / 2:
                 self.walkingDirection = randint(15, 75)
             else:

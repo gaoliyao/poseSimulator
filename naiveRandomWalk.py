@@ -3,14 +3,15 @@ import os
 
 from poseModel.Pose import Pose
 from utils.personLoading import loadPersonOne, loadPersonTwo
-
+from visualize import draw
 # Change the parameters here
 # the number of frame
 # iter time
 from utils.pose import createNewPose
+from utils.Comparator import Comparator
 
 frameNum = 50
-iterationTime = 30
+iterationTime = 1
 cameraHeight = 100
 cameraDistance = 100
 viewHeight = 1080
@@ -20,7 +21,30 @@ maxSpeed = 14
 walkingDirectionRange = [-10, 10]
 personNum = 3
 
+comparator = Comparator()
 cwd = os.getcwd()
+
+def inputDataWithRandomOrder(currPoseList):
+    for i in range(0, personNum):
+        index = randint(0, len(currPoseList) - 1)
+        for node in currPoseList[index].getPoseNodes():
+            out2.write(str(node.getX()) + " " + str(node.getY()) + " ")
+        currPoseList.remove(currPoseList[index])
+
+def inputDataWithIDOrder(currPoseList):
+    for i in range(0, personNum):
+        for node in currPoseList[i].getPoseNodes():
+            out2.write(str(node.getX()) + " " + str(node.getY()) + " ")
+
+def inputDataWithSumOrder(currPoseList):
+    while len(currPoseList) != 0:
+        curSmallestDistPose = currPoseList[0]
+        for pose in currPoseList:
+            curSmallestDistPose = comparator.getSmallerDistancePose(pose, curSmallestDistPose)
+        for node in curSmallestDistPose.getPoseNodes():
+            out2.write(str(node.getX()) + " " + str(node.getY()) + " ")
+        currPoseList.remove(curSmallestDistPose)
+
 
 def getOverlap(x1, y1, x2, y2, x3, y3, x4, y4):
     dx = min(x2, x4) - max(x1, x3)
@@ -126,11 +150,7 @@ for j in range(0, iterationTime):
             else:
                 out3.write(str(minX) + " " + str(minY) + " " + str(maxX) + " " + str(maxY) + " ")
 
-        for i in range(0, personNum):
-            index = randint(0, len(currPoseList)-1)
-            for node in currPoseList[index].getPoseNodes():
-                out2.write(str(node.getX()) + " " + str(node.getY()) + " ")
-            currPoseList.remove(currPoseList[index])
+        inputDataWithSumOrder(currPoseList)
 
         out2.write("\n")
         out3.write("\n")
@@ -159,4 +179,4 @@ for line in out3:
 inputData.close()
 outputData.close()
 
-#draw()
+draw()
