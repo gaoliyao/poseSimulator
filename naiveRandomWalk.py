@@ -10,14 +10,14 @@ from utils.personLoading import loadPersonOne, loadPersonTwo
 from utils.pose import createNewPose
 
 frameNum = 50
-iterationTime = 1
+iterationTime = 30
 cameraHeight = 100
 cameraDistance = 100
 viewHeight = 1080
 viewWidth = 1980
-minSpeed = 10
-maxSpeed = 20
-walkingDirectionRange = [-90, 450]
+minSpeed = 3
+maxSpeed = 14
+walkingDirectionRange = [-10, 10]
 personNum = 3
 
 cwd = os.getcwd()
@@ -101,6 +101,7 @@ for j in range(0, iterationTime):
     personList = []
     for k in range(0, personNum):
         newPerson = loadPersonOne(cwd, viewWidth, viewHeight)
+        newPerson.startFromEdge()
         personList.append(newPerson)
 
     for i in range(1, frameNum + int(frameNum/10) + 1):
@@ -109,8 +110,8 @@ for j in range(0, iterationTime):
         # person 1
         for person in personList:
             speedOne = randint(minSpeed, maxSpeed)
-            direction = randint(0, 360)
-            if i % 10 == 0:
+            direction = 0
+            if i % 20 == 0:
                 randX , randY = getRandomRange()
                 direction += randint(randX, randY)
             person.walk(speedOne, direction)
@@ -120,8 +121,8 @@ for j in range(0, iterationTime):
             minX, minY, maxX, maxY = currPose.getBound()
             if minX < 0 or minY < 0 or maxX >= 1980 or maxY >= 1080:
                 out3.write("-1 -1 -1 -1 ")
-                for n in currPoseList[0].getPoseNodes():
-                    n.invalid()
+                # for n in currPoseList[0].getPoseNodes():
+                #     n.invalid()
             else:
                 out3.write(str(minX) + " " + str(minY) + " " + str(maxX) + " " + str(maxY) + " ")
 
@@ -157,3 +158,5 @@ for line in out3:
 
 inputData.close()
 outputData.close()
+
+#draw()
