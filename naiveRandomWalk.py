@@ -11,7 +11,7 @@ from utils.pose import createNewPose
 from utils.Comparator import Comparator
 
 frameNum = 50
-iterationTime = 1
+iterationTime = 30
 cameraHeight = 100
 cameraDistance = 100
 viewHeight = 1080
@@ -45,6 +45,14 @@ def inputDataWithSumOrder(currPoseList):
             out2.write(str(node.getX()) + " " + str(node.getY()) + " ")
         currPoseList.remove(curSmallestDistPose)
 
+def inputDataWithRankingOrder(currPoseList):
+    while len(currPoseList) != 0:
+        curSmallestDistPose = currPoseList[0]
+        for pose in currPoseList:
+            curSmallestDistPose = comparator.getSmallerRankingPose(pose, curSmallestDistPose)
+        for node in curSmallestDistPose.getPoseNodes():
+            out2.write(str(node.getX()) + " " + str(node.getY()) + " ")
+        currPoseList.remove(curSmallestDistPose)
 
 def getOverlap(x1, y1, x2, y2, x3, y3, x4, y4):
     dx = min(x2, x4) - max(x1, x3)
@@ -150,7 +158,8 @@ for j in range(0, iterationTime):
             else:
                 out3.write(str(minX) + " " + str(minY) + " " + str(maxX) + " " + str(maxY) + " ")
 
-        inputDataWithSumOrder(currPoseList)
+        # specify the output file order
+        inputDataWithRankingOrder(currPoseList)
 
         out2.write("\n")
         out3.write("\n")
@@ -159,8 +168,11 @@ for j in range(0, iterationTime):
 out2.close()
 out3.close()
 
-inputData = open(cwd + "/data/inputData.txt", 'w')
-outputData = open(cwd + "/data/outputData.txt", 'w')
+#inputData = open(cwd + "/data/inputData.txt", 'w')
+#outputData = open(cwd + "/data/outputData.txt", 'w')
+
+inputData = open("/Users/mars/Desktop/PData/inputData.txt", 'w')
+outputData = open("/Users/mars/Desktop/PData/outputData.txt", 'w')
 
 out2 = open(cwd + "/data/out2.txt", 'r')
 out3 = open(cwd + "/data/out3.txt", 'r')
@@ -179,4 +191,4 @@ for line in out3:
 inputData.close()
 outputData.close()
 
-draw()
+#draw()

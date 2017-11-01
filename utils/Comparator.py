@@ -24,3 +24,20 @@ class Comparator:
             return pose2
         else:
             return pose1
+
+    def getSmallerRankingPose(self, pose1, pose2):
+        x1, y1, x2, y2 = pose1.getBound()
+        a1, b1, a2, b2 = pose2.getBound()
+        xAve = (x1 + x2) / 2
+        aAve = (a1 + a2) / 2
+        yAve = int((y1 + y2) / 2)
+        bAve = int((b1 + b2) / 2)
+        if yAve < bAve:
+            return pose1
+        elif yAve > bAve:
+            return pose2
+        else:
+            if xAve <= aAve:
+                return pose1
+            else:
+                return pose2
