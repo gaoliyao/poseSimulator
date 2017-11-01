@@ -1,6 +1,7 @@
 from random import randint
 import os
 
+from poseModel.Node import Node
 from poseModel.Pose import Pose
 from utils.personLoading import loadPersonOne, loadPersonTwo
 from visualize import draw
@@ -19,10 +20,17 @@ viewWidth = 1980
 minSpeed = 3
 maxSpeed = 14
 walkingDirectionRange = [-10, 10]
-personNum = 3
+personNum = 1
 
 comparator = Comparator()
 cwd = os.getcwd()
+
+def createRandomNoise(currPose):
+    newPose = Pose()
+    for node in currPose.getPoseNodes():
+        newNode = Node(node.getID(), node.getX() / (1 + (50/node.getX())), node.getY() / (1 + (50/node.getY())), node.getConfidence())
+        newPose.addNode(newNode)
+    return newPose
 
 def inputDataWithRandomOrder(currPoseList):
     for i in range(0, personNum):
@@ -135,9 +143,9 @@ for j in range(0, iterationTime):
         newPerson = loadPersonOne(cwd, viewWidth, viewHeight)
         newPerson.startFromEdge()
         personList.append(newPerson)
+        randomNoiseIndex = randint(10, 40)
 
     for i in range(1, frameNum + int(frameNum/10) + 1):
-
         currPoseList = []
         # person 1
         for person in personList:
@@ -148,6 +156,8 @@ for j in range(0, iterationTime):
                 direction += randint(randX, randY)
             person.walk(speedOne, direction)
             currPose = person.getCurrentWalkingPose()
+            if i == randomNoiseIndex:
+                currPose = createRandomNoise(currPose)
             currPoseList.append(currPose)
 
             minX, minY, maxX, maxY = currPose.getBound()
@@ -191,4 +201,4 @@ for line in out3:
 inputData.close()
 outputData.close()
 
-#draw()
+draw()

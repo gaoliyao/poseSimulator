@@ -1,3 +1,4 @@
+from poseModel.Node import Node
 from poseModel.graphics import *
 class Pose:
     poseNodes = []
@@ -71,3 +72,10 @@ class Pose:
             if node.getY() < self.minY:
                 self.minY = node.getY()
         return self.minX, self.minY, self.maxX, self.maxY
+    def becomeMovedNoise(self, p):
+        nodeList = []
+        for node in self.getPoseNodes():
+            newNode = Node(node.getID(), node.getX() * p, node.getY() * p, node.getConfidence())
+            nodeList.append(newNode)
+        self.poseNodes.clear()
+        self.poseNodes = nodeList

@@ -3,13 +3,13 @@ import matplotlib.patches as patches
 import numpy as np
 
 def draw():
-	rect_file = np.loadtxt('data/outputData.txt')
+	rect_file = np.loadtxt('/Users/mars/Desktop/PData/outputData.txt')
 	shape = rect_file.shape
 
 	FRAME_LENGTH = 50
 	PEOPLE_NUM = int(shape[1] / 4) # Number of people in each frame.
 
-	FRAME_SHOW = 2 # Which frame sequence you want to visualize? Change this if you want
+	FRAME_SHOW = 1 # Which frame sequence you want to visualize? Change this if you want
 	START_FRAME = (FRAME_SHOW-1) * FRAME_LENGTH
 	END_FRAME = FRAME_SHOW * FRAME_LENGTH
 
