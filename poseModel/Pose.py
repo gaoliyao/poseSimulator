@@ -9,11 +9,17 @@ class Pose:
     maxX = -1
     minY = 100000
     maxY = -1
+    noisePoseNodes = []
     def __init__(self):
         self.poseNodes = []
         self.normalizedPoseNodes = []
+        self.noisePoseNodes = []
         self.showPoints = []
         self.AveConfidence = 0.0
+        self.minX = 100000
+        self.maxX = -1
+        self.minY = 100000
+        self.maxY = -1
     def addNode(self, node):
         self.poseNodes.append(node)
     def getAveConfidence(self):
@@ -72,10 +78,16 @@ class Pose:
             if node.getY() < self.minY:
                 self.minY = node.getY()
         return self.minX, self.minY, self.maxX, self.maxY
-    def becomeMovedNoise(self, p):
+    def addMovedNoise(self):
         nodeList = []
         for node in self.getPoseNodes():
-            newNode = Node(node.getID(), node.getX() * p, node.getY() * p, node.getConfidence())
+            newNode = Node(node.getID(), node.getX() / (1 + (50 / node.getX())), node.getY() / (1 + (50 / node.getY())), node.getConfidence())
             nodeList.append(newNode)
-        self.poseNodes.clear()
-        self.poseNodes = nodeList
+        self.noisePoseNodes = nodeList
+    def isNoiseExist(self):
+        if len(self.noisePoseNodes) == 0:
+            return False
+        else:
+            return True
+    def getNoisePoseNodes(self):
+        return self.noisePoseNodes

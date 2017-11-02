@@ -12,7 +12,7 @@ from utils.pose import createNewPose
 from utils.Comparator import Comparator
 
 frameNum = 50
-iterationTime = 30
+iterationTime = 1
 cameraHeight = 100
 cameraDistance = 100
 viewHeight = 1080
@@ -58,7 +58,12 @@ def inputDataWithRankingOrder(currPoseList):
         curSmallestDistPose = currPoseList[0]
         for pose in currPoseList:
             curSmallestDistPose = comparator.getSmallerRankingPose(pose, curSmallestDistPose)
-        for node in curSmallestDistPose.getPoseNodes():
+            poseNodeList = []
+            if curSmallestDistPose.isNoiseExist():
+                poseNodeList = curSmallestDistPose.getNoisePoseNodes()
+            else:
+                poseNodeList = curSmallestDistPose.getPoseNodes()
+        for node in poseNodeList:
             out2.write(str(node.getX()) + " " + str(node.getY()) + " ")
         currPoseList.remove(curSmallestDistPose)
 
@@ -157,7 +162,7 @@ for j in range(0, iterationTime):
             person.walk(speedOne, direction)
             currPose = person.getCurrentWalkingPose()
             if i == randomNoiseIndex:
-                currPose = createRandomNoise(currPose)
+                currPose.addMovedNoise()
             currPoseList.append(currPose)
 
             minX, minY, maxX, maxY = currPose.getBound()
