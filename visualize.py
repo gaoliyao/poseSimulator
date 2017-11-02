@@ -3,7 +3,7 @@ import matplotlib.patches as patches
 import numpy as np
 
 def draw():
-	rect_file = np.loadtxt('/Users/mars/Desktop/PData/outputData.txt')
+	rect_file = np.loadtxt('E:\mars\poseSimulatorData/outputData.txt')
 	shape = rect_file.shape
 
 	FRAME_LENGTH = 50

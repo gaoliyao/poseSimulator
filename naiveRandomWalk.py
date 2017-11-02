@@ -186,8 +186,8 @@ out3.close()
 #inputData = open(cwd + "/data/inputData.txt", 'w')
 #outputData = open(cwd + "/data/outputData.txt", 'w')
 
-inputData = open("/Users/mars/Desktop/PData/inputData.txt", 'w')
-outputData = open("/Users/mars/Desktop/PData/outputData.txt", 'w')
+inputData = open("E:\mars\poseSimulatorData/inputData.txt", 'w')
+outputData = open("E:\mars\poseSimulatorData/outputData.txt", 'w')
 
 out2 = open(cwd + "/data/out2.txt", 'r')
 out3 = open(cwd + "/data/out3.txt", 'r')
