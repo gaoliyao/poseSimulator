@@ -12,13 +12,13 @@ from utils.pose import createNewPose
 from utils.Comparator import Comparator
 
 frameNum = 50
-iterationTime = 1
+iterationTime = 30
 cameraHeight = 100
 cameraDistance = 100
 viewHeight = 1080
 viewWidth = 1980
-minSpeed = 3
-maxSpeed = 14
+minSpeed = 4
+maxSpeed = 15
 walkingDirectionRange = [-10, 10]
 personNum = 1
 
@@ -161,8 +161,8 @@ for j in range(0, iterationTime):
                 direction += randint(randX, randY)
             person.walk(speedOne, direction)
             currPose = person.getCurrentWalkingPose()
-            if i == randomNoiseIndex:
-                currPose.addMovedNoise()
+            #if i == randomNoiseIndex:
+            #    currPose.addMovedNoise()
             currPoseList.append(currPose)
 
             minX, minY, maxX, maxY = currPose.getBound()
