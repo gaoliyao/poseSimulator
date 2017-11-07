@@ -36,5 +36,5 @@ class Node:
     def getID(self):
         return self.id
     def invalid(self):
-        self.x = -1
-        self.y = -1
+        self.x = 0
+        self.y = 0

@@ -12,21 +12,15 @@ from utils.pose import createNewPose
 from utils.Comparator import Comparator
 
 frameNum = 50
-iterationTime = 30
-cameraHeight = 100
-cameraDistance = 100
+iterationTime = 1
+cameraHeight = 0
+cameraDistance = 0
 viewHeight = 1080
 viewWidth = 1980
-minSpeed = 3
+minSpeed = 4
 maxSpeed = 14
-# the range of walking direction
-# if you want to go exactly straight, [-10, 10] is good enough
-# if you want it to curve [-90, 90] will be a good choice
-walkingDirectionRange = [-10, 10] # [-90, 90]
-personNum = 10
-# the random number of the appeared noise id
-# if you dont want any noise, change to [-1, -1]
-noiseIndexRange = [10, 40] # [-1, -1]
+walkingDirectionRange = [-10, 10]
+personNum = 1
 
 comparator = Comparator()
 cwd = os.getcwd()
@@ -161,10 +155,9 @@ randomY = 360
 for j in range(0, iterationTime):
     personList = []
     for k in range(0, personNum):
-        newPerson = loadPersonOne(cwd, viewWidth, viewHeight)
+        newPerson = loadPersonOne(cwd, viewWidth, viewHeight, cameraHeight, cameraDistance)
         newPerson.startFromEdge()
         personList.append(newPerson)
-        randomNoiseIndex = randint(noiseIndexRange[0], noiseIndexRange[1])
 
     for i in range(1, frameNum + int(frameNum/10) + 1):
         currPoseList = []
@@ -177,8 +170,17 @@ for j in range(0, iterationTime):
                 direction += randint(randX, randY)
             person.walk(speedOne, direction)
             currPose = person.getCurrentWalkingPose()
-            if i == randomNoiseIndex:
-                currPose.addMovedNoise()
+            k = randint(0, 40)
+            if k >= 17 and k <= 27:
+                currPose.addNNDNoise()
+            elif k >= 28 and k <= 35:
+                currPose.addThirdNNDPose()
+            elif k >= 36 and k <= 38:
+                currPose.addHalfNNDPose()
+            elif k >= 39 and k <= 40:
+                currPose.addDNDNoise()
+            else:
+                pass
             currPoseList.append(currPose)
 
             minX, minY, maxX, maxY = currPose.getBound()
@@ -187,14 +189,13 @@ for j in range(0, iterationTime):
                 # for n in currPoseList[0].getPoseNodes():
                 #     n.invalid()
             else:
+                # for i in range(0, personNum):
+                #     for node in currPoseList[i].getPoseNodes():
+                #         out3.write(str(node.getX()) + " " + str(node.getY()) + " ")
                 out3.write(str(minX) + " " + str(minY) + " " + str(maxX) + " " + str(maxY) + " ")
 
-        # if you want to change the input file order, change the function
-        # inputDataWithRandomOrder(currPoseList)
-        # inputDataWithIDOrder(currPoseList)
-        # inputDataWithRankingOrder(currPoseList) Order with Row
-        # specify the input file order
-        inputDataWithRandomOrder(currPoseList)
+        # specify the output file order
+        inputDataWithRankingOrder(currPoseList)
 
         out2.write("\n")
         out3.write("\n")

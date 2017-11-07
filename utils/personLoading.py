@@ -3,10 +3,10 @@ from poseModel.Person import Person
 from poseModel.Pose import Pose
 from poseModel.graphics import GraphWin, Circle, Point
 
-def loadPersonOne(cwd, viewWidth, viewHeight):
+def loadPersonOne(cwd, viewWidth, viewHeight, cameraHeight, cameraDistance):
     file = open(cwd + "/data/person1Frame.txt", 'r')
     # currWin = None
-    person = Person(viewWidth, viewHeight)
+    person = Person(viewWidth, viewHeight, cameraHeight, cameraDistance)
     poseSequence = []
     count = 0
     index = 0

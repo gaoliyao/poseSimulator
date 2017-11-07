@@ -17,6 +17,8 @@ class Person:
     originalDistance = 1800
     viewHeight = 0
     viewWidth = 0
+    cameraHeight = 0
+    cameraDistance = 0
     walkingDirection = 0
 
     def __init__(self):
@@ -28,8 +30,10 @@ class Person:
         self.direction = 0
         self.poseIndex = 0
         self.walkingTrace = []
+        self.cameraDistance = 0
+        self.cameraHeight = 0
         self.walkingDirection = randint(0, 360)
-    def __init__(self, width, height):
+    def __init__(self, width, height, cameraHeight, cameraDis):
         self.poseSequence = []
         self.nextPosePrediction = []
         self.viewHeight = height
@@ -39,6 +43,8 @@ class Person:
         self.speed = 0
         self.direction = 0
         self.poseIndex = 0
+        self.cameraDistance = cameraDis
+        self.cameraHeight = cameraHeight
         self.walkingTrace = []
         self.walkingDirection = randint(0, 360)
     def addPoseSequence(self, poseSequence):
@@ -95,7 +101,7 @@ class Person:
     def setOriginalDistance(self, distance):
         self.originalDistance = distance
     def getCurrentDistance(self):
-        return (self.currX**2 + (self.currY + self.viewHeight / 2)**2 + 540**2) ** 0.5
+        return (self.currX**2 + (self.currY + self.cameraHeight / 2)**2 + self.cameraDistance**2) ** 0.5
     def startFromEdge(self):
         case = randint(0, 3)
         if case == 0:
