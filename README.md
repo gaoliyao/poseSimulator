@@ -2,7 +2,7 @@
 Pose, as an important feature of human, is necessary to increase the tracking system. 
 This is the result of Openpose. 
 
-[PoseSimulator](!http://www.consortium.ri.cmu.edu/data/openpose/OpenPose1.png)
+![PoseSimulator](http://www.consortium.ri.cmu.edu/data/openpose/OpenPose1.png)
 
 ## Introduction
 Pose simulator is for the generation of pose training data. 
